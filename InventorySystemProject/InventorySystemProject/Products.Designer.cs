@@ -28,418 +28,426 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button8 = new Button();
-            button4 = new Button();
-            button7 = new Button();
-            button6 = new Button();
-            button3 = new Button();
-            button5 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            groupBox2 = new GroupBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            label10 = new Label();
-            label6 = new Label();
-            groupBox3 = new GroupBox();
-            pictureBox1 = new PictureBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            label5 = new Label();
-            label4 = new Label();
-            groupBox1 = new GroupBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            groupBox1.SuspendLayout();
+            btnPrevious = new Button();
+            imgProfilePhoto = new PictureBox();
+            btnSave = new Button();
+            grpProductDetails = new GroupBox();
+            txtPassword = new TextBox();
+            txtUsername = new TextBox();
+            txtPosition = new TextBox();
+            lblUnitPrice = new Label();
+            lblUnit = new Label();
+            lblQuantity = new Label();
+            lblEmployeeIdValue = new Label();
+            lblProductId = new Label();
+            grpContactInfo = new GroupBox();
+            txtEmail = new TextBox();
+            txtPhone = new TextBox();
+            lblProductExpiration = new Label();
+            lblProductStatus = new Label();
+            txtLastName = new TextBox();
+            btnDelete = new Button();
+            txtMiddleName = new TextBox();
+            btnLast = new Button();
+            btnNext = new Button();
+            txtFirstName = new TextBox();
+            btnFirst = new Button();
+            lblProductDescription = new Label();
+            lblProductCategory = new Label();
+            btnAdd = new Button();
+            btnCancel = new Button();
+            grpProduct = new GroupBox();
+            lblProductName = new Label();
+            ((System.ComponentModel.ISupportInitialize)imgProfilePhoto).BeginInit();
+            grpProductDetails.SuspendLayout();
+            grpContactInfo.SuspendLayout();
+            grpProduct.SuspendLayout();
             SuspendLayout();
             // 
-            // button8
+            // btnPrevious
             // 
-            button8.Location = new Point(886, 418);
-            button8.Name = "button8";
-            button8.Size = new Size(120, 50);
-            button8.TabIndex = 7;
-            button8.Text = "button1";
-            button8.UseVisualStyleBackColor = true;
+            btnPrevious.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPrevious.Location = new Point(631, 358);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new Size(120, 50);
+            btnPrevious.TabIndex = 25;
+            btnPrevious.Text = "Previous";
+            btnPrevious.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // imgProfilePhoto
             // 
-            button4.Location = new Point(886, 362);
-            button4.Name = "button4";
-            button4.Size = new Size(120, 50);
-            button4.TabIndex = 8;
-            button4.Text = "button1";
-            button4.UseVisualStyleBackColor = true;
+            imgProfilePhoto.Location = new Point(341, 37);
+            imgProfilePhoto.Name = "imgProfilePhoto";
+            imgProfilePhoto.Size = new Size(150, 150);
+            imgProfilePhoto.TabIndex = 4;
+            imgProfilePhoto.TabStop = false;
             // 
-            // button7
+            // btnSave
             // 
-            button7.Location = new Point(760, 418);
-            button7.Name = "button7";
-            button7.Size = new Size(120, 50);
-            button7.TabIndex = 9;
-            button7.Text = "button1";
-            button7.UseVisualStyleBackColor = true;
+            btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSave.Location = new Point(757, 414);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(120, 50);
+            btnSave.TabIndex = 26;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // grpProductDetails
             // 
-            button6.Location = new Point(634, 418);
-            button6.Name = "button6";
-            button6.Size = new Size(120, 50);
-            button6.TabIndex = 10;
-            button6.Text = "button1";
-            button6.UseVisualStyleBackColor = true;
+            grpProductDetails.Controls.Add(txtPassword);
+            grpProductDetails.Controls.Add(txtUsername);
+            grpProductDetails.Controls.Add(txtPosition);
+            grpProductDetails.Controls.Add(lblUnitPrice);
+            grpProductDetails.Controls.Add(lblUnit);
+            grpProductDetails.Controls.Add(lblQuantity);
+            grpProductDetails.Controls.Add(lblEmployeeIdValue);
+            grpProductDetails.Controls.Add(lblProductId);
+            grpProductDetails.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            grpProductDetails.Location = new Point(10, 231);
+            grpProductDetails.Margin = new Padding(4);
+            grpProductDetails.Name = "grpProductDetails";
+            grpProductDetails.Padding = new Padding(4);
+            grpProductDetails.Size = new Size(479, 243);
+            grpProductDetails.TabIndex = 17;
+            grpProductDetails.TabStop = false;
+            grpProductDetails.Text = "Product Details";
             // 
-            // button3
+            // txtPassword
             // 
-            button3.Location = new Point(760, 362);
-            button3.Name = "button3";
-            button3.Size = new Size(120, 50);
-            button3.TabIndex = 11;
-            button3.Text = "button1";
-            button3.UseVisualStyleBackColor = true;
+            txtPassword.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtPassword.Location = new Point(145, 181);
+            txtPassword.Margin = new Padding(4);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(300, 32);
+            txtPassword.TabIndex = 3;
             // 
-            // button5
+            // txtUsername
             // 
-            button5.Location = new Point(508, 418);
-            button5.Name = "button5";
-            button5.Size = new Size(120, 50);
-            button5.TabIndex = 12;
-            button5.Text = "button1";
-            button5.UseVisualStyleBackColor = true;
+            txtUsername.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtUsername.Location = new Point(145, 131);
+            txtUsername.Margin = new Padding(4);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(300, 32);
+            txtUsername.TabIndex = 3;
             // 
-            // button2
+            // txtPosition
             // 
-            button2.Location = new Point(634, 362);
-            button2.Name = "button2";
-            button2.Size = new Size(120, 50);
-            button2.TabIndex = 13;
-            button2.Text = "button1";
-            button2.UseVisualStyleBackColor = true;
+            txtPosition.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtPosition.Location = new Point(145, 82);
+            txtPosition.Margin = new Padding(4);
+            txtPosition.Name = "txtPosition";
+            txtPosition.Size = new Size(300, 32);
+            txtPosition.TabIndex = 3;
             // 
-            // button1
+            // lblUnitPrice
             // 
-            button1.Location = new Point(508, 362);
-            button1.Name = "button1";
-            button1.Size = new Size(120, 50);
-            button1.TabIndex = 14;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            lblUnitPrice.AutoSize = true;
+            lblUnitPrice.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUnitPrice.Location = new Point(42, 184);
+            lblUnitPrice.Margin = new Padding(4, 0, 4, 0);
+            lblUnitPrice.Name = "lblUnitPrice";
+            lblUnitPrice.Size = new Size(95, 25);
+            lblUnitPrice.TabIndex = 0;
+            lblUnitPrice.Text = "Unit Price";
             // 
-            // groupBox2
+            // lblUnit
             // 
-            groupBox2.Controls.Add(textBox8);
-            groupBox2.Controls.Add(textBox7);
-            groupBox2.Controls.Add(textBox6);
-            groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(label10);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox2.Location = new Point(13, 235);
-            groupBox2.Margin = new Padding(4);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(4);
-            groupBox2.Size = new Size(479, 243);
-            groupBox2.TabIndex = 5;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Employment Details";
+            lblUnit.AutoSize = true;
+            lblUnit.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUnit.Location = new Point(89, 134);
+            lblUnit.Margin = new Padding(4, 0, 4, 0);
+            lblUnit.Name = "lblUnit";
+            lblUnit.Size = new Size(48, 25);
+            lblUnit.TabIndex = 0;
+            lblUnit.Text = "Unit";
             // 
-            // textBox8
+            // lblQuantity
             // 
-            textBox8.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox8.Location = new Point(145, 181);
-            textBox8.Margin = new Padding(4);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(300, 32);
-            textBox8.TabIndex = 3;
+            lblQuantity.AutoSize = true;
+            lblQuantity.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblQuantity.Location = new Point(50, 85);
+            lblQuantity.Margin = new Padding(4, 0, 4, 0);
+            lblQuantity.Name = "lblQuantity";
+            lblQuantity.Size = new Size(87, 25);
+            lblQuantity.TabIndex = 0;
+            lblQuantity.Text = "Quantity";
             // 
-            // textBox7
+            // lblEmployeeIdValue
             // 
-            textBox7.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox7.Location = new Point(145, 131);
-            textBox7.Margin = new Padding(4);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(300, 32);
-            textBox7.TabIndex = 3;
+            lblEmployeeIdValue.AutoSize = true;
+            lblEmployeeIdValue.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEmployeeIdValue.Location = new Point(147, 45);
+            lblEmployeeIdValue.Margin = new Padding(4, 0, 4, 0);
+            lblEmployeeIdValue.Name = "lblEmployeeIdValue";
+            lblEmployeeIdValue.Size = new Size(155, 25);
+            lblEmployeeIdValue.TabIndex = 0;
+            lblEmployeeIdValue.Text = "<EMPLOYEE ID>";
             // 
-            // textBox6
+            // lblProductId
             // 
-            textBox6.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox6.Location = new Point(145, 82);
-            textBox6.Margin = new Padding(4);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(300, 32);
-            textBox6.TabIndex = 3;
+            lblProductId.AutoSize = true;
+            lblProductId.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProductId.Location = new Point(33, 45);
+            lblProductId.Margin = new Padding(4, 0, 4, 0);
+            lblProductId.Name = "lblProductId";
+            lblProductId.Size = new Size(104, 25);
+            lblProductId.TabIndex = 0;
+            lblProductId.Text = "Product ID";
             // 
-            // label9
+            // grpContactInfo
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(47, 185);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(91, 25);
-            label9.TabIndex = 0;
-            label9.Text = "Password";
+            grpContactInfo.Controls.Add(imgProfilePhoto);
+            grpContactInfo.Controls.Add(txtEmail);
+            grpContactInfo.Controls.Add(txtPhone);
+            grpContactInfo.Controls.Add(lblProductExpiration);
+            grpContactInfo.Controls.Add(lblProductStatus);
+            grpContactInfo.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            grpContactInfo.Location = new Point(497, 9);
+            grpContactInfo.Margin = new Padding(4);
+            grpContactInfo.Name = "grpContactInfo";
+            grpContactInfo.Padding = new Padding(4);
+            grpContactInfo.Size = new Size(514, 214);
+            grpContactInfo.TabIndex = 18;
+            grpContactInfo.TabStop = false;
+            grpContactInfo.Text = "Product State";
             // 
-            // label8
+            // txtEmail
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(40, 135);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(98, 25);
-            label8.TabIndex = 0;
-            label8.Text = "Username";
+            txtEmail.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtEmail.Location = new Point(8, 141);
+            txtEmail.Margin = new Padding(4);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(300, 32);
+            txtEmail.TabIndex = 3;
             // 
-            // label7
+            // txtPhone
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(58, 86);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(80, 25);
-            label7.TabIndex = 0;
-            label7.Text = "Position";
+            txtPhone.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtPhone.Location = new Point(8, 66);
+            txtPhone.Margin = new Padding(4);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(300, 32);
+            txtPhone.TabIndex = 3;
             // 
-            // label10
+            // lblProductExpiration
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(146, 44);
-            label10.Margin = new Padding(4, 0, 4, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(155, 25);
-            label10.TabIndex = 0;
-            label10.Text = "<EMPLOYEE ID>";
+            lblProductExpiration.AutoSize = true;
+            lblProductExpiration.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProductExpiration.Location = new Point(10, 114);
+            lblProductExpiration.Margin = new Padding(4, 0, 4, 0);
+            lblProductExpiration.Name = "lblProductExpiration";
+            lblProductExpiration.Size = new Size(166, 25);
+            lblProductExpiration.TabIndex = 1;
+            lblProductExpiration.Text = "Earliest Expiration";
             // 
-            // label6
+            // lblProductStatus
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(17, 44);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(121, 25);
-            label6.TabIndex = 0;
-            label6.Text = "Employee ID";
+            lblProductStatus.AutoSize = true;
+            lblProductStatus.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProductStatus.Location = new Point(10, 39);
+            lblProductStatus.Margin = new Padding(4, 0, 4, 0);
+            lblProductStatus.Name = "lblProductStatus";
+            lblProductStatus.Size = new Size(159, 25);
+            lblProductStatus.TabIndex = 0;
+            lblProductStatus.Text = "Stock Availability";
             // 
-            // groupBox3
+            // txtLastName
             // 
-            groupBox3.Controls.Add(pictureBox1);
-            groupBox3.Controls.Add(textBox5);
-            groupBox3.Controls.Add(textBox4);
-            groupBox3.Controls.Add(label5);
-            groupBox3.Controls.Add(label4);
-            groupBox3.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox3.Location = new Point(500, 13);
-            groupBox3.Margin = new Padding(4);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(4);
-            groupBox3.Size = new Size(514, 214);
-            groupBox3.TabIndex = 6;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Contact Information";
+            txtLastName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtLastName.Location = new Point(145, 141);
+            txtLastName.Margin = new Padding(4);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(300, 32);
+            txtLastName.TabIndex = 3;
             // 
-            // pictureBox1
+            // btnDelete
             // 
-            pictureBox1.Location = new Point(341, 37);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 150);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            btnDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.Location = new Point(631, 414);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(120, 50);
+            btnDelete.TabIndex = 24;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txtMiddleName
             // 
-            textBox5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox5.Location = new Point(8, 141);
-            textBox5.Margin = new Padding(4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(300, 32);
-            textBox5.TabIndex = 3;
+            txtMiddleName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtMiddleName.Location = new Point(145, 90);
+            txtMiddleName.Margin = new Padding(4);
+            txtMiddleName.Name = "txtMiddleName";
+            txtMiddleName.Size = new Size(300, 32);
+            txtMiddleName.TabIndex = 3;
             // 
-            // textBox4
+            // btnLast
             // 
-            textBox4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox4.Location = new Point(8, 66);
-            textBox4.Margin = new Padding(4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(300, 32);
-            textBox4.TabIndex = 3;
+            btnLast.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLast.Location = new Point(883, 358);
+            btnLast.Name = "btnLast";
+            btnLast.Size = new Size(120, 50);
+            btnLast.TabIndex = 20;
+            btnLast.Text = "Last";
+            btnLast.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // btnNext
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(9, 113);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(132, 25);
-            label5.TabIndex = 1;
-            label5.Text = "Email Address";
+            btnNext.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNext.Location = new Point(757, 358);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(120, 50);
+            btnNext.TabIndex = 21;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // txtFirstName
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(9, 38);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(142, 25);
-            label4.TabIndex = 0;
-            label4.Text = "Phone Number";
+            txtFirstName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtFirstName.Location = new Point(145, 37);
+            txtFirstName.Margin = new Padding(4);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(300, 32);
+            txtFirstName.TabIndex = 3;
             // 
-            // groupBox1
+            // btnFirst
             // 
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(13, 13);
-            groupBox1.Margin = new Padding(4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(479, 214);
-            groupBox1.TabIndex = 4;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Name";
+            btnFirst.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFirst.Location = new Point(505, 358);
+            btnFirst.Name = "btnFirst";
+            btnFirst.Size = new Size(120, 50);
+            btnFirst.TabIndex = 19;
+            btnFirst.Text = "First";
+            btnFirst.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // lblProductDescription
             // 
-            textBox3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox3.Location = new Point(145, 141);
-            textBox3.Margin = new Padding(4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(300, 32);
-            textBox3.TabIndex = 3;
+            lblProductDescription.AutoSize = true;
+            lblProductDescription.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProductDescription.Location = new Point(27, 93);
+            lblProductDescription.Margin = new Padding(4, 0, 4, 0);
+            lblProductDescription.Name = "lblProductDescription";
+            lblProductDescription.Size = new Size(110, 25);
+            lblProductDescription.TabIndex = 2;
+            lblProductDescription.Text = "Description";
             // 
-            // textBox2
+            // lblProductCategory
             // 
-            textBox2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox2.Location = new Point(145, 90);
-            textBox2.Margin = new Padding(4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(300, 32);
-            textBox2.TabIndex = 3;
+            lblProductCategory.AutoSize = true;
+            lblProductCategory.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProductCategory.Location = new Point(46, 144);
+            lblProductCategory.Margin = new Padding(4, 0, 4, 0);
+            lblProductCategory.Name = "lblProductCategory";
+            lblProductCategory.Size = new Size(91, 25);
+            lblProductCategory.TabIndex = 1;
+            lblProductCategory.Text = "Category";
             // 
-            // textBox1
+            // btnAdd
             // 
-            textBox1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(145, 37);
-            textBox1.Margin = new Padding(4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(300, 32);
-            textBox1.TabIndex = 3;
+            btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.Location = new Point(505, 414);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(120, 50);
+            btnAdd.TabIndex = 22;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // btnCancel
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(9, 94);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(129, 25);
-            label3.TabIndex = 2;
-            label3.Text = "Middle Name";
+            btnCancel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancel.Location = new Point(883, 414);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(120, 50);
+            btnCancel.TabIndex = 23;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // grpProduct
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(35, 145);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(103, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Last Name";
+            grpProduct.Controls.Add(txtLastName);
+            grpProduct.Controls.Add(txtMiddleName);
+            grpProduct.Controls.Add(txtFirstName);
+            grpProduct.Controls.Add(lblProductDescription);
+            grpProduct.Controls.Add(lblProductCategory);
+            grpProduct.Controls.Add(lblProductName);
+            grpProduct.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            grpProduct.Location = new Point(10, 9);
+            grpProduct.Margin = new Padding(4);
+            grpProduct.Name = "grpProduct";
+            grpProduct.Padding = new Padding(4);
+            grpProduct.Size = new Size(479, 214);
+            grpProduct.TabIndex = 16;
+            grpProduct.TabStop = false;
+            grpProduct.Text = "Product";
             // 
-            // label1
+            // lblProductName
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(32, 41);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(106, 25);
-            label1.TabIndex = 0;
-            label1.Text = "First Name";
+            lblProductName.AutoSize = true;
+            lblProductName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProductName.Location = new Point(73, 40);
+            lblProductName.Margin = new Padding(4, 0, 4, 0);
+            lblProductName.Name = "lblProductName";
+            lblProductName.Size = new Size(64, 25);
+            lblProductName.TabIndex = 0;
+            lblProductName.Text = "Name";
             // 
             // Products
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1021, 483);
-            Controls.Add(button8);
-            Controls.Add(button4);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button3);
-            Controls.Add(button5);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox1);
+            Controls.Add(btnPrevious);
+            Controls.Add(btnSave);
+            Controls.Add(grpProductDetails);
+            Controls.Add(grpContactInfo);
+            Controls.Add(btnDelete);
+            Controls.Add(btnLast);
+            Controls.Add(btnNext);
+            Controls.Add(btnFirst);
+            Controls.Add(btnAdd);
+            Controls.Add(btnCancel);
+            Controls.Add(grpProduct);
             Name = "Products";
             Text = "Products";
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)imgProfilePhoto).EndInit();
+            grpProductDetails.ResumeLayout(false);
+            grpProductDetails.PerformLayout();
+            grpContactInfo.ResumeLayout(false);
+            grpContactInfo.PerformLayout();
+            grpProduct.ResumeLayout(false);
+            grpProduct.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button8;
-        private Button button4;
-        private Button button7;
-        private Button button6;
-        private Button button3;
-        private Button button5;
-        private Button button2;
-        private Button button1;
-        private GroupBox groupBox2;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label10;
-        private Label label6;
-        private GroupBox groupBox3;
-        private PictureBox pictureBox1;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private Label label5;
-        private Label label4;
-        private GroupBox groupBox1;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Button btnPrevious;
+        private PictureBox imgProfilePhoto;
+        private Button btnSave;
+        private GroupBox grpProductDetails;
+        private TextBox txtPassword;
+        private TextBox txtUsername;
+        private TextBox txtPosition;
+        private Label lblUnitPrice;
+        private Label lblUnit;
+        private Label lblQuantity;
+        private Label lblEmployeeIdValue;
+        private Label lblProductId;
+        private GroupBox grpContactInfo;
+        private TextBox txtEmail;
+        private TextBox txtPhone;
+        private Label lblProductExpiration;
+        private Label lblProductStatus;
+        private TextBox txtLastName;
+        private Button btnDelete;
+        private TextBox txtMiddleName;
+        private Button btnLast;
+        private Button btnNext;
+        private TextBox txtFirstName;
+        private Button btnFirst;
+        private Label lblProductDescription;
+        private Label lblProductCategory;
+        private Button btnAdd;
+        private Button btnCancel;
+        private GroupBox grpProduct;
+        private Label lblProductName;
     }
 }
