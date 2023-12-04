@@ -19,3 +19,4 @@ C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemPr
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.InventoryLogs.resources
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Products.resources
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Login.resources
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Properties.Resources.resources

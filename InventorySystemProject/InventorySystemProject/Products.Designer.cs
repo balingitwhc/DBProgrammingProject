@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             btnPrevious = new Button();
-            imgProfilePhoto = new PictureBox();
+            imgProductPhoto = new PictureBox();
             btnSave = new Button();
             grpProductDetails = new GroupBox();
-            txtPassword = new TextBox();
-            txtUsername = new TextBox();
-            txtPosition = new TextBox();
+            txtUnitPrice = new TextBox();
+            txtUnit = new TextBox();
+            txtQuantity = new TextBox();
             lblUnitPrice = new Label();
             lblUnit = new Label();
             lblQuantity = new Label();
-            lblEmployeeIdValue = new Label();
+            lblProductIdValue = new Label();
             lblProductId = new Label();
-            grpContactInfo = new GroupBox();
-            txtEmail = new TextBox();
-            txtPhone = new TextBox();
+            grpProductState = new GroupBox();
+            txtProductExpiration = new TextBox();
+            txtProductStatus = new TextBox();
             lblProductExpiration = new Label();
             lblProductStatus = new Label();
-            txtLastName = new TextBox();
+            txtProductCategory = new TextBox();
             btnDelete = new Button();
-            txtMiddleName = new TextBox();
+            txtProductDescription = new TextBox();
             btnLast = new Button();
             btnNext = new Button();
-            txtFirstName = new TextBox();
+            txtProductName = new TextBox();
             btnFirst = new Button();
             lblProductDescription = new Label();
             lblProductCategory = new Label();
@@ -58,86 +58,87 @@
             btnCancel = new Button();
             grpProduct = new GroupBox();
             lblProductName = new Label();
-            ((System.ComponentModel.ISupportInitialize)imgProfilePhoto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgProductPhoto).BeginInit();
             grpProductDetails.SuspendLayout();
-            grpContactInfo.SuspendLayout();
+            grpProductState.SuspendLayout();
             grpProduct.SuspendLayout();
             SuspendLayout();
             // 
             // btnPrevious
             // 
             btnPrevious.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPrevious.Location = new Point(631, 358);
+            btnPrevious.Location = new Point(634, 362);
             btnPrevious.Name = "btnPrevious";
             btnPrevious.Size = new Size(120, 50);
-            btnPrevious.TabIndex = 25;
+            btnPrevious.TabIndex = 4;
             btnPrevious.Text = "Previous";
             btnPrevious.UseVisualStyleBackColor = true;
             // 
-            // imgProfilePhoto
+            // imgProductPhoto
             // 
-            imgProfilePhoto.Location = new Point(341, 37);
-            imgProfilePhoto.Name = "imgProfilePhoto";
-            imgProfilePhoto.Size = new Size(150, 150);
-            imgProfilePhoto.TabIndex = 4;
-            imgProfilePhoto.TabStop = false;
+            imgProductPhoto.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            imgProductPhoto.Location = new Point(341, 37);
+            imgProductPhoto.Name = "imgProductPhoto";
+            imgProductPhoto.Size = new Size(150, 150);
+            imgProductPhoto.TabIndex = 4;
+            imgProductPhoto.TabStop = false;
             // 
             // btnSave
             // 
             btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSave.Location = new Point(757, 414);
+            btnSave.Location = new Point(760, 418);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(120, 50);
-            btnSave.TabIndex = 26;
+            btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             // 
             // grpProductDetails
             // 
-            grpProductDetails.Controls.Add(txtPassword);
-            grpProductDetails.Controls.Add(txtUsername);
-            grpProductDetails.Controls.Add(txtPosition);
+            grpProductDetails.Controls.Add(txtUnitPrice);
+            grpProductDetails.Controls.Add(txtUnit);
+            grpProductDetails.Controls.Add(txtQuantity);
             grpProductDetails.Controls.Add(lblUnitPrice);
             grpProductDetails.Controls.Add(lblUnit);
             grpProductDetails.Controls.Add(lblQuantity);
-            grpProductDetails.Controls.Add(lblEmployeeIdValue);
+            grpProductDetails.Controls.Add(lblProductIdValue);
             grpProductDetails.Controls.Add(lblProductId);
             grpProductDetails.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            grpProductDetails.Location = new Point(10, 231);
+            grpProductDetails.Location = new Point(13, 235);
             grpProductDetails.Margin = new Padding(4);
             grpProductDetails.Name = "grpProductDetails";
             grpProductDetails.Padding = new Padding(4);
             grpProductDetails.Size = new Size(479, 243);
-            grpProductDetails.TabIndex = 17;
+            grpProductDetails.TabIndex = 1;
             grpProductDetails.TabStop = false;
             grpProductDetails.Text = "Product Details";
             // 
-            // txtPassword
+            // txtUnitPrice
             // 
-            txtPassword.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtPassword.Location = new Point(145, 181);
-            txtPassword.Margin = new Padding(4);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(300, 32);
-            txtPassword.TabIndex = 3;
+            txtUnitPrice.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtUnitPrice.Location = new Point(145, 181);
+            txtUnitPrice.Margin = new Padding(4);
+            txtUnitPrice.Name = "txtUnitPrice";
+            txtUnitPrice.Size = new Size(300, 32);
+            txtUnitPrice.TabIndex = 7;
             // 
-            // txtUsername
+            // txtUnit
             // 
-            txtUsername.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtUsername.Location = new Point(145, 131);
-            txtUsername.Margin = new Padding(4);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(300, 32);
-            txtUsername.TabIndex = 3;
+            txtUnit.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtUnit.Location = new Point(145, 131);
+            txtUnit.Margin = new Padding(4);
+            txtUnit.Name = "txtUnit";
+            txtUnit.Size = new Size(300, 32);
+            txtUnit.TabIndex = 6;
             // 
-            // txtPosition
+            // txtQuantity
             // 
-            txtPosition.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtPosition.Location = new Point(145, 82);
-            txtPosition.Margin = new Padding(4);
-            txtPosition.Name = "txtPosition";
-            txtPosition.Size = new Size(300, 32);
-            txtPosition.TabIndex = 3;
+            txtQuantity.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtQuantity.Location = new Point(145, 82);
+            txtQuantity.Margin = new Padding(4);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Size = new Size(300, 32);
+            txtQuantity.TabIndex = 5;
             // 
             // lblUnitPrice
             // 
@@ -147,7 +148,7 @@
             lblUnitPrice.Margin = new Padding(4, 0, 4, 0);
             lblUnitPrice.Name = "lblUnitPrice";
             lblUnitPrice.Size = new Size(95, 25);
-            lblUnitPrice.TabIndex = 0;
+            lblUnitPrice.TabIndex = 3;
             lblUnitPrice.Text = "Unit Price";
             // 
             // lblUnit
@@ -158,7 +159,7 @@
             lblUnit.Margin = new Padding(4, 0, 4, 0);
             lblUnit.Name = "lblUnit";
             lblUnit.Size = new Size(48, 25);
-            lblUnit.TabIndex = 0;
+            lblUnit.TabIndex = 2;
             lblUnit.Text = "Unit";
             // 
             // lblQuantity
@@ -169,19 +170,19 @@
             lblQuantity.Margin = new Padding(4, 0, 4, 0);
             lblQuantity.Name = "lblQuantity";
             lblQuantity.Size = new Size(87, 25);
-            lblQuantity.TabIndex = 0;
+            lblQuantity.TabIndex = 1;
             lblQuantity.Text = "Quantity";
             // 
-            // lblEmployeeIdValue
+            // lblProductIdValue
             // 
-            lblEmployeeIdValue.AutoSize = true;
-            lblEmployeeIdValue.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEmployeeIdValue.Location = new Point(147, 45);
-            lblEmployeeIdValue.Margin = new Padding(4, 0, 4, 0);
-            lblEmployeeIdValue.Name = "lblEmployeeIdValue";
-            lblEmployeeIdValue.Size = new Size(155, 25);
-            lblEmployeeIdValue.TabIndex = 0;
-            lblEmployeeIdValue.Text = "<EMPLOYEE ID>";
+            lblProductIdValue.AutoSize = true;
+            lblProductIdValue.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProductIdValue.Location = new Point(147, 45);
+            lblProductIdValue.Margin = new Padding(4, 0, 4, 0);
+            lblProductIdValue.Name = "lblProductIdValue";
+            lblProductIdValue.Size = new Size(149, 25);
+            lblProductIdValue.TabIndex = 4;
+            lblProductIdValue.Text = "<PRODUCT ID>";
             // 
             // lblProductId
             // 
@@ -194,40 +195,40 @@
             lblProductId.TabIndex = 0;
             lblProductId.Text = "Product ID";
             // 
-            // grpContactInfo
+            // grpProductState
             // 
-            grpContactInfo.Controls.Add(imgProfilePhoto);
-            grpContactInfo.Controls.Add(txtEmail);
-            grpContactInfo.Controls.Add(txtPhone);
-            grpContactInfo.Controls.Add(lblProductExpiration);
-            grpContactInfo.Controls.Add(lblProductStatus);
-            grpContactInfo.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            grpContactInfo.Location = new Point(497, 9);
-            grpContactInfo.Margin = new Padding(4);
-            grpContactInfo.Name = "grpContactInfo";
-            grpContactInfo.Padding = new Padding(4);
-            grpContactInfo.Size = new Size(514, 214);
-            grpContactInfo.TabIndex = 18;
-            grpContactInfo.TabStop = false;
-            grpContactInfo.Text = "Product State";
+            grpProductState.Controls.Add(imgProductPhoto);
+            grpProductState.Controls.Add(txtProductExpiration);
+            grpProductState.Controls.Add(txtProductStatus);
+            grpProductState.Controls.Add(lblProductExpiration);
+            grpProductState.Controls.Add(lblProductStatus);
+            grpProductState.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            grpProductState.Location = new Point(500, 13);
+            grpProductState.Margin = new Padding(4);
+            grpProductState.Name = "grpProductState";
+            grpProductState.Padding = new Padding(4);
+            grpProductState.Size = new Size(514, 214);
+            grpProductState.TabIndex = 2;
+            grpProductState.TabStop = false;
+            grpProductState.Text = "Product State";
             // 
-            // txtEmail
+            // txtProductExpiration
             // 
-            txtEmail.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtEmail.Location = new Point(8, 141);
-            txtEmail.Margin = new Padding(4);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(300, 32);
-            txtEmail.TabIndex = 3;
+            txtProductExpiration.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtProductExpiration.Location = new Point(7, 141);
+            txtProductExpiration.Margin = new Padding(4);
+            txtProductExpiration.Name = "txtProductExpiration";
+            txtProductExpiration.Size = new Size(300, 32);
+            txtProductExpiration.TabIndex = 3;
             // 
-            // txtPhone
+            // txtProductStatus
             // 
-            txtPhone.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtPhone.Location = new Point(8, 66);
-            txtPhone.Margin = new Padding(4);
-            txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(300, 32);
-            txtPhone.TabIndex = 3;
+            txtProductStatus.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtProductStatus.Location = new Point(7, 66);
+            txtProductStatus.Margin = new Padding(4);
+            txtProductStatus.Name = "txtProductStatus";
+            txtProductStatus.Size = new Size(300, 32);
+            txtProductStatus.TabIndex = 1;
             // 
             // lblProductExpiration
             // 
@@ -237,7 +238,7 @@
             lblProductExpiration.Margin = new Padding(4, 0, 4, 0);
             lblProductExpiration.Name = "lblProductExpiration";
             lblProductExpiration.Size = new Size(166, 25);
-            lblProductExpiration.TabIndex = 1;
+            lblProductExpiration.TabIndex = 2;
             lblProductExpiration.Text = "Earliest Expiration";
             // 
             // lblProductStatus
@@ -251,70 +252,70 @@
             lblProductStatus.TabIndex = 0;
             lblProductStatus.Text = "Stock Availability";
             // 
-            // txtLastName
+            // txtProductCategory
             // 
-            txtLastName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtLastName.Location = new Point(145, 141);
-            txtLastName.Margin = new Padding(4);
-            txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(300, 32);
-            txtLastName.TabIndex = 3;
+            txtProductCategory.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtProductCategory.Location = new Point(145, 141);
+            txtProductCategory.Margin = new Padding(4);
+            txtProductCategory.Name = "txtProductCategory";
+            txtProductCategory.Size = new Size(300, 32);
+            txtProductCategory.TabIndex = 5;
             // 
             // btnDelete
             // 
             btnDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDelete.Location = new Point(631, 414);
+            btnDelete.Location = new Point(634, 418);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(120, 50);
-            btnDelete.TabIndex = 24;
+            btnDelete.TabIndex = 8;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
             // 
-            // txtMiddleName
+            // txtProductDescription
             // 
-            txtMiddleName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtMiddleName.Location = new Point(145, 90);
-            txtMiddleName.Margin = new Padding(4);
-            txtMiddleName.Name = "txtMiddleName";
-            txtMiddleName.Size = new Size(300, 32);
-            txtMiddleName.TabIndex = 3;
+            txtProductDescription.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtProductDescription.Location = new Point(145, 90);
+            txtProductDescription.Margin = new Padding(4);
+            txtProductDescription.Name = "txtProductDescription";
+            txtProductDescription.Size = new Size(300, 32);
+            txtProductDescription.TabIndex = 4;
             // 
             // btnLast
             // 
             btnLast.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLast.Location = new Point(883, 358);
+            btnLast.Location = new Point(886, 362);
             btnLast.Name = "btnLast";
             btnLast.Size = new Size(120, 50);
-            btnLast.TabIndex = 20;
+            btnLast.TabIndex = 6;
             btnLast.Text = "Last";
             btnLast.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
             btnNext.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNext.Location = new Point(757, 358);
+            btnNext.Location = new Point(760, 362);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(120, 50);
-            btnNext.TabIndex = 21;
+            btnNext.TabIndex = 5;
             btnNext.Text = "Next";
             btnNext.UseVisualStyleBackColor = true;
             // 
-            // txtFirstName
+            // txtProductName
             // 
-            txtFirstName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtFirstName.Location = new Point(145, 37);
-            txtFirstName.Margin = new Padding(4);
-            txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(300, 32);
-            txtFirstName.TabIndex = 3;
+            txtProductName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtProductName.Location = new Point(145, 37);
+            txtProductName.Margin = new Padding(4);
+            txtProductName.Name = "txtProductName";
+            txtProductName.Size = new Size(300, 32);
+            txtProductName.TabIndex = 3;
             // 
             // btnFirst
             // 
             btnFirst.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFirst.Location = new Point(505, 358);
+            btnFirst.Location = new Point(508, 362);
             btnFirst.Name = "btnFirst";
             btnFirst.Size = new Size(120, 50);
-            btnFirst.TabIndex = 19;
+            btnFirst.TabIndex = 3;
             btnFirst.Text = "First";
             btnFirst.UseVisualStyleBackColor = true;
             // 
@@ -322,59 +323,59 @@
             // 
             lblProductDescription.AutoSize = true;
             lblProductDescription.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProductDescription.Location = new Point(27, 93);
+            lblProductDescription.Location = new Point(28, 94);
             lblProductDescription.Margin = new Padding(4, 0, 4, 0);
             lblProductDescription.Name = "lblProductDescription";
             lblProductDescription.Size = new Size(110, 25);
-            lblProductDescription.TabIndex = 2;
+            lblProductDescription.TabIndex = 1;
             lblProductDescription.Text = "Description";
             // 
             // lblProductCategory
             // 
             lblProductCategory.AutoSize = true;
             lblProductCategory.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProductCategory.Location = new Point(46, 144);
+            lblProductCategory.Location = new Point(47, 145);
             lblProductCategory.Margin = new Padding(4, 0, 4, 0);
             lblProductCategory.Name = "lblProductCategory";
             lblProductCategory.Size = new Size(91, 25);
-            lblProductCategory.TabIndex = 1;
+            lblProductCategory.TabIndex = 2;
             lblProductCategory.Text = "Category";
             // 
             // btnAdd
             // 
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.Location = new Point(505, 414);
+            btnAdd.Location = new Point(508, 418);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(120, 50);
-            btnAdd.TabIndex = 22;
+            btnAdd.TabIndex = 7;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
             btnCancel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancel.Location = new Point(883, 414);
+            btnCancel.Location = new Point(886, 418);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(120, 50);
-            btnCancel.TabIndex = 23;
+            btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
             // grpProduct
             // 
-            grpProduct.Controls.Add(txtLastName);
-            grpProduct.Controls.Add(txtMiddleName);
-            grpProduct.Controls.Add(txtFirstName);
+            grpProduct.Controls.Add(txtProductCategory);
+            grpProduct.Controls.Add(txtProductDescription);
+            grpProduct.Controls.Add(txtProductName);
             grpProduct.Controls.Add(lblProductDescription);
             grpProduct.Controls.Add(lblProductCategory);
             grpProduct.Controls.Add(lblProductName);
             grpProduct.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            grpProduct.Location = new Point(10, 9);
+            grpProduct.Location = new Point(13, 13);
             grpProduct.Margin = new Padding(4);
             grpProduct.Name = "grpProduct";
             grpProduct.Padding = new Padding(4);
             grpProduct.Size = new Size(479, 214);
-            grpProduct.TabIndex = 16;
+            grpProduct.TabIndex = 0;
             grpProduct.TabStop = false;
             grpProduct.Text = "Product";
             // 
@@ -382,7 +383,7 @@
             // 
             lblProductName.AutoSize = true;
             lblProductName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProductName.Location = new Point(73, 40);
+            lblProductName.Location = new Point(74, 41);
             lblProductName.Margin = new Padding(4, 0, 4, 0);
             lblProductName.Name = "lblProductName";
             lblProductName.Size = new Size(64, 25);
@@ -393,11 +394,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1021, 483);
+            ClientSize = new Size(1025, 513);
             Controls.Add(btnPrevious);
             Controls.Add(btnSave);
             Controls.Add(grpProductDetails);
-            Controls.Add(grpContactInfo);
+            Controls.Add(grpProductState);
             Controls.Add(btnDelete);
             Controls.Add(btnLast);
             Controls.Add(btnNext);
@@ -407,11 +408,11 @@
             Controls.Add(grpProduct);
             Name = "Products";
             Text = "Products";
-            ((System.ComponentModel.ISupportInitialize)imgProfilePhoto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgProductPhoto).EndInit();
             grpProductDetails.ResumeLayout(false);
             grpProductDetails.PerformLayout();
-            grpContactInfo.ResumeLayout(false);
-            grpContactInfo.PerformLayout();
+            grpProductState.ResumeLayout(false);
+            grpProductState.PerformLayout();
             grpProduct.ResumeLayout(false);
             grpProduct.PerformLayout();
             ResumeLayout(false);
@@ -420,28 +421,28 @@
         #endregion
 
         private Button btnPrevious;
-        private PictureBox imgProfilePhoto;
+        private PictureBox imgProductPhoto;
         private Button btnSave;
         private GroupBox grpProductDetails;
-        private TextBox txtPassword;
-        private TextBox txtUsername;
-        private TextBox txtPosition;
+        private TextBox txtUnitPrice;
+        private TextBox txtUnit;
+        private TextBox txtQuantity;
         private Label lblUnitPrice;
         private Label lblUnit;
         private Label lblQuantity;
-        private Label lblEmployeeIdValue;
+        private Label lblProductIdValue;
         private Label lblProductId;
-        private GroupBox grpContactInfo;
-        private TextBox txtEmail;
-        private TextBox txtPhone;
+        private GroupBox grpProductState;
+        private TextBox txtProductExpiration;
+        private TextBox txtProductStatus;
         private Label lblProductExpiration;
         private Label lblProductStatus;
-        private TextBox txtLastName;
+        private TextBox txtProductCategory;
         private Button btnDelete;
-        private TextBox txtMiddleName;
+        private TextBox txtProductDescription;
         private Button btnLast;
         private Button btnNext;
-        private TextBox txtFirstName;
+        private TextBox txtProductName;
         private Button btnFirst;
         private Label lblProductDescription;
         private Label lblProductCategory;

@@ -71,7 +71,7 @@
             txtPhone.Margin = new Padding(4);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(300, 32);
-            txtPhone.TabIndex = 3;
+            txtPhone.TabIndex = 1;
             // 
             // lblEmail
             // 
@@ -81,7 +81,7 @@
             lblEmail.Margin = new Padding(4, 0, 4, 0);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(132, 25);
-            lblEmail.TabIndex = 1;
+            lblEmail.TabIndex = 2;
             lblEmail.Text = "Email Address";
             // 
             // lblPhone
@@ -101,7 +101,7 @@
             btnFirst.Location = new Point(508, 362);
             btnFirst.Name = "btnFirst";
             btnFirst.Size = new Size(120, 50);
-            btnFirst.TabIndex = 8;
+            btnFirst.TabIndex = 3;
             btnFirst.Text = "First";
             btnFirst.UseVisualStyleBackColor = true;
             // 
@@ -112,7 +112,7 @@
             txtPassword.Margin = new Padding(4);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(300, 32);
-            txtPassword.TabIndex = 3;
+            txtPassword.TabIndex = 7;
             // 
             // btnLast
             // 
@@ -120,7 +120,7 @@
             btnLast.Location = new Point(886, 362);
             btnLast.Name = "btnLast";
             btnLast.Size = new Size(120, 50);
-            btnLast.TabIndex = 9;
+            btnLast.TabIndex = 6;
             btnLast.Text = "Last";
             btnLast.UseVisualStyleBackColor = true;
             // 
@@ -130,7 +130,7 @@
             btnNext.Location = new Point(760, 362);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(120, 50);
-            btnNext.TabIndex = 10;
+            btnNext.TabIndex = 5;
             btnNext.Text = "Next";
             btnNext.UseVisualStyleBackColor = true;
             // 
@@ -140,7 +140,7 @@
             btnAdd.Location = new Point(508, 418);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(120, 50);
-            btnAdd.TabIndex = 11;
+            btnAdd.TabIndex = 7;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
             // 
@@ -151,7 +151,7 @@
             txtUsername.Margin = new Padding(4);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(300, 32);
-            txtUsername.TabIndex = 3;
+            txtUsername.TabIndex = 6;
             // 
             // txtPosition
             // 
@@ -160,7 +160,7 @@
             txtPosition.Margin = new Padding(4);
             txtPosition.Name = "txtPosition";
             txtPosition.Size = new Size(300, 32);
-            txtPosition.TabIndex = 3;
+            txtPosition.TabIndex = 5;
             // 
             // lblPassword
             // 
@@ -170,7 +170,7 @@
             lblPassword.Margin = new Padding(4, 0, 4, 0);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(91, 25);
-            lblPassword.TabIndex = 0;
+            lblPassword.TabIndex = 3;
             lblPassword.Text = "Password";
             // 
             // lblUsername
@@ -181,7 +181,7 @@
             lblUsername.Margin = new Padding(4, 0, 4, 0);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(98, 25);
-            lblUsername.TabIndex = 0;
+            lblUsername.TabIndex = 2;
             lblUsername.Text = "Username";
             // 
             // lblPosition
@@ -192,7 +192,7 @@
             lblPosition.Margin = new Padding(4, 0, 4, 0);
             lblPosition.Name = "lblPosition";
             lblPosition.Size = new Size(80, 25);
-            lblPosition.TabIndex = 0;
+            lblPosition.TabIndex = 1;
             lblPosition.Text = "Position";
             // 
             // lblEmployeeIdValue
@@ -203,7 +203,7 @@
             lblEmployeeIdValue.Margin = new Padding(4, 0, 4, 0);
             lblEmployeeIdValue.Name = "lblEmployeeIdValue";
             lblEmployeeIdValue.Size = new Size(155, 25);
-            lblEmployeeIdValue.TabIndex = 0;
+            lblEmployeeIdValue.TabIndex = 4;
             lblEmployeeIdValue.Text = "<EMPLOYEE ID>";
             // 
             // btnCancel
@@ -212,7 +212,7 @@
             btnCancel.Location = new Point(886, 418);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(120, 50);
-            btnCancel.TabIndex = 12;
+            btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -222,7 +222,7 @@
             btnDelete.Location = new Point(634, 418);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(120, 50);
-            btnDelete.TabIndex = 13;
+            btnDelete.TabIndex = 8;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
             // 
@@ -232,7 +232,7 @@
             btnPrevious.Location = new Point(634, 362);
             btnPrevious.Name = "btnPrevious";
             btnPrevious.Size = new Size(120, 50);
-            btnPrevious.TabIndex = 14;
+            btnPrevious.TabIndex = 4;
             btnPrevious.Text = "Previous";
             btnPrevious.UseVisualStyleBackColor = true;
             // 
@@ -261,7 +261,7 @@
             btnSave.Location = new Point(760, 418);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(120, 50);
-            btnSave.TabIndex = 15;
+            btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             // 
@@ -281,7 +281,7 @@
             grpEmployeeDetails.Name = "grpEmployeeDetails";
             grpEmployeeDetails.Padding = new Padding(4);
             grpEmployeeDetails.Size = new Size(479, 243);
-            grpEmployeeDetails.TabIndex = 5;
+            grpEmployeeDetails.TabIndex = 1;
             grpEmployeeDetails.TabStop = false;
             grpEmployeeDetails.Text = "Employment Details";
             // 
@@ -298,7 +298,7 @@
             grpContactInfo.Name = "grpContactInfo";
             grpContactInfo.Padding = new Padding(4);
             grpContactInfo.Size = new Size(514, 214);
-            grpContactInfo.TabIndex = 6;
+            grpContactInfo.TabIndex = 2;
             grpContactInfo.TabStop = false;
             grpContactInfo.Text = "Contact Information";
             // 
@@ -318,7 +318,7 @@
             txtLastName.Margin = new Padding(4);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(300, 32);
-            txtLastName.TabIndex = 3;
+            txtLastName.TabIndex = 5;
             // 
             // txtMiddleName
             // 
@@ -327,7 +327,7 @@
             txtMiddleName.Margin = new Padding(4);
             txtMiddleName.Name = "txtMiddleName";
             txtMiddleName.Size = new Size(300, 32);
-            txtMiddleName.TabIndex = 3;
+            txtMiddleName.TabIndex = 4;
             // 
             // txtFirstName
             // 
@@ -346,7 +346,7 @@
             lblMiddleName.Margin = new Padding(4, 0, 4, 0);
             lblMiddleName.Name = "lblMiddleName";
             lblMiddleName.Size = new Size(129, 25);
-            lblMiddleName.TabIndex = 2;
+            lblMiddleName.TabIndex = 1;
             lblMiddleName.Text = "Middle Name";
             // 
             // lblLastName
@@ -357,7 +357,7 @@
             lblLastName.Margin = new Padding(4, 0, 4, 0);
             lblLastName.Name = "lblLastName";
             lblLastName.Size = new Size(103, 25);
-            lblLastName.TabIndex = 1;
+            lblLastName.TabIndex = 2;
             lblLastName.Text = "Last Name";
             // 
             // lblFirstName
@@ -385,7 +385,7 @@
             grpName.Name = "grpName";
             grpName.Padding = new Padding(4);
             grpName.Size = new Size(479, 214);
-            grpName.TabIndex = 4;
+            grpName.TabIndex = 0;
             grpName.TabStop = false;
             grpName.Text = "Name";
             // 
