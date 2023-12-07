@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblProductName = new Label();
             imgLogPhoto = new PictureBox();
             btnAdd = new Button();
@@ -48,25 +49,27 @@
             grpEmployee = new GroupBox();
             txtLogQuantity = new TextBox();
             lblExpirationDate = new Label();
-            lblUnit = new Label();
+            lblLogDate = new Label();
             lblQuantity = new Label();
             lblLogIdValue = new Label();
             lblLogId = new Label();
             btnPrevious = new Button();
             btnSave = new Button();
             grpInventoryLog = new GroupBox();
-            comboBox1 = new ComboBox();
+            dtpLogDate = new DateTimePicker();
             dtpLogExpiration = new DateTimePicker();
             rdoRemove = new RadioButton();
             rdoAdd = new RadioButton();
             grpProduct = new GroupBox();
             grpNotes = new GroupBox();
             txtLogNotes = new TextBox();
+            errProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)imgLogPhoto).BeginInit();
             grpEmployee.SuspendLayout();
             grpInventoryLog.SuspendLayout();
             grpProduct.SuspendLayout();
             grpNotes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errProvider).BeginInit();
             SuspendLayout();
             // 
             // lblProductName
@@ -97,6 +100,7 @@
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnCancel
             // 
@@ -107,6 +111,7 @@
             btnCancel.TabIndex = 11;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // lblProductDescription
             // 
@@ -139,6 +144,7 @@
             btnFirst.TabIndex = 4;
             btnFirst.Text = "First";
             btnFirst.UseVisualStyleBackColor = true;
+            btnFirst.Click += Navigation_Handler;
             // 
             // txtProductName
             // 
@@ -158,6 +164,7 @@
             btnLast.TabIndex = 7;
             btnLast.Text = "Last";
             btnLast.UseVisualStyleBackColor = true;
+            btnLast.Click += Navigation_Handler;
             // 
             // btnNext
             // 
@@ -168,6 +175,7 @@
             btnNext.TabIndex = 6;
             btnNext.Text = "Next";
             btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += Navigation_Handler;
             // 
             // txtProductDescription
             // 
@@ -187,6 +195,7 @@
             btnDelete.TabIndex = 9;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // txtProductCategory
             // 
@@ -274,16 +283,16 @@
             lblExpirationDate.TabIndex = 3;
             lblExpirationDate.Text = "Expiration";
             // 
-            // lblUnit
+            // lblLogDate
             // 
-            lblUnit.AutoSize = true;
-            lblUnit.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUnit.Location = new Point(89, 134);
-            lblUnit.Margin = new Padding(4, 0, 4, 0);
-            lblUnit.Name = "lblUnit";
-            lblUnit.Size = new Size(48, 25);
-            lblUnit.TabIndex = 2;
-            lblUnit.Text = "Unit";
+            lblLogDate.AutoSize = true;
+            lblLogDate.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblLogDate.Location = new Point(48, 137);
+            lblLogDate.Margin = new Padding(4, 0, 4, 0);
+            lblLogDate.Name = "lblLogDate";
+            lblLogDate.Size = new Size(89, 25);
+            lblLogDate.TabIndex = 2;
+            lblLogDate.Text = "Log Date";
             // 
             // lblQuantity
             // 
@@ -327,6 +336,7 @@
             btnPrevious.TabIndex = 5;
             btnPrevious.Text = "Previous";
             btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += Navigation_Handler;
             // 
             // btnSave
             // 
@@ -337,16 +347,17 @@
             btnSave.TabIndex = 10;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // grpInventoryLog
             // 
-            grpInventoryLog.Controls.Add(comboBox1);
+            grpInventoryLog.Controls.Add(dtpLogDate);
             grpInventoryLog.Controls.Add(dtpLogExpiration);
             grpInventoryLog.Controls.Add(rdoRemove);
             grpInventoryLog.Controls.Add(rdoAdd);
             grpInventoryLog.Controls.Add(txtLogQuantity);
             grpInventoryLog.Controls.Add(lblExpirationDate);
-            grpInventoryLog.Controls.Add(lblUnit);
+            grpInventoryLog.Controls.Add(lblLogDate);
             grpInventoryLog.Controls.Add(lblQuantity);
             grpInventoryLog.Controls.Add(lblLogIdValue);
             grpInventoryLog.Controls.Add(lblLogId);
@@ -360,14 +371,13 @@
             grpInventoryLog.TabStop = false;
             grpInventoryLog.Text = "Inventory Log Details";
             // 
-            // comboBox1
+            // dtpLogDate
             // 
-            comboBox1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(144, 131);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(300, 33);
-            comboBox1.TabIndex = 11;
+            dtpLogDate.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dtpLogDate.Location = new Point(144, 134);
+            dtpLogDate.Name = "dtpLogDate";
+            dtpLogDate.Size = new Size(300, 29);
+            dtpLogDate.TabIndex = 12;
             // 
             // dtpLogExpiration
             // 
@@ -441,6 +451,11 @@
             txtLogNotes.Size = new Size(498, 72);
             txtLogNotes.TabIndex = 0;
             // 
+            // errProvider
+            // 
+            errProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            errProvider.ContainerControl = this;
+            // 
             // frmInventoryLogs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -470,6 +485,7 @@
             grpProduct.PerformLayout();
             grpNotes.ResumeLayout(false);
             grpNotes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -495,7 +511,7 @@
         private GroupBox grpEmployee;
         private TextBox txtLogQuantity;
         private Label lblExpirationDate;
-        private Label lblUnit;
+        private Label lblLogDate;
         private Label lblQuantity;
         private Label lblLogIdValue;
         private Label lblLogId;
@@ -508,6 +524,7 @@
         private RadioButton rdoRemove;
         private RadioButton rdoAdd;
         private DateTimePicker dtpLogExpiration;
-        private ComboBox comboBox1;
+        private ErrorProvider errProvider;
+        private DateTimePicker dtpLogDate;
     }
 }
