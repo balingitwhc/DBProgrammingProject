@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnPrevious = new Button();
             imgProductPhoto = new PictureBox();
             btnSave = new Button();
@@ -41,9 +42,9 @@
             lblProductIdValue = new Label();
             lblProductId = new Label();
             grpProductState = new GroupBox();
-            txtProductExpiration = new TextBox();
+            txtMaxStockAmt = new TextBox();
             txtProductStatus = new TextBox();
-            lblProductExpiration = new Label();
+            lblMaxStockAmt = new Label();
             lblProductStatus = new Label();
             txtProductCategory = new TextBox();
             btnDelete = new Button();
@@ -58,10 +59,12 @@
             btnCancel = new Button();
             grpProduct = new GroupBox();
             lblProductName = new Label();
+            errProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)imgProductPhoto).BeginInit();
             grpProductDetails.SuspendLayout();
             grpProductState.SuspendLayout();
             grpProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errProvider).BeginInit();
             SuspendLayout();
             // 
             // btnPrevious
@@ -73,6 +76,7 @@
             btnPrevious.TabIndex = 4;
             btnPrevious.Text = "Previous";
             btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += Navigation_Handler;
             // 
             // imgProductPhoto
             // 
@@ -92,6 +96,7 @@
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // grpProductDetails
             // 
@@ -121,6 +126,8 @@
             txtUnitPrice.Name = "txtUnitPrice";
             txtUnitPrice.Size = new Size(300, 32);
             txtUnitPrice.TabIndex = 7;
+            txtUnitPrice.Tag = "Unit Price";
+            txtUnitPrice.Validating += txt_Validating;
             // 
             // txtUnit
             // 
@@ -130,6 +137,8 @@
             txtUnit.Name = "txtUnit";
             txtUnit.Size = new Size(300, 32);
             txtUnit.TabIndex = 6;
+            txtUnit.Tag = "Unit";
+            txtUnit.Validating += txt_Validating;
             // 
             // txtQuantity
             // 
@@ -139,6 +148,8 @@
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(300, 32);
             txtQuantity.TabIndex = 5;
+            txtQuantity.Tag = "Quantity";
+            txtQuantity.Validating += txt_Validating;
             // 
             // lblUnitPrice
             // 
@@ -198,9 +209,9 @@
             // grpProductState
             // 
             grpProductState.Controls.Add(imgProductPhoto);
-            grpProductState.Controls.Add(txtProductExpiration);
+            grpProductState.Controls.Add(txtMaxStockAmt);
             grpProductState.Controls.Add(txtProductStatus);
-            grpProductState.Controls.Add(lblProductExpiration);
+            grpProductState.Controls.Add(lblMaxStockAmt);
             grpProductState.Controls.Add(lblProductStatus);
             grpProductState.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
             grpProductState.Location = new Point(500, 13);
@@ -212,14 +223,16 @@
             grpProductState.TabStop = false;
             grpProductState.Text = "Product State";
             // 
-            // txtProductExpiration
+            // txtMaxStockAmt
             // 
-            txtProductExpiration.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtProductExpiration.Location = new Point(7, 141);
-            txtProductExpiration.Margin = new Padding(4);
-            txtProductExpiration.Name = "txtProductExpiration";
-            txtProductExpiration.Size = new Size(300, 32);
-            txtProductExpiration.TabIndex = 3;
+            txtMaxStockAmt.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            txtMaxStockAmt.Location = new Point(7, 141);
+            txtMaxStockAmt.Margin = new Padding(4);
+            txtMaxStockAmt.Name = "txtMaxStockAmt";
+            txtMaxStockAmt.Size = new Size(300, 32);
+            txtMaxStockAmt.TabIndex = 3;
+            txtMaxStockAmt.Tag = "Max Stock";
+            txtMaxStockAmt.Validating += txt_Validating;
             // 
             // txtProductStatus
             // 
@@ -229,17 +242,19 @@
             txtProductStatus.Name = "txtProductStatus";
             txtProductStatus.Size = new Size(300, 32);
             txtProductStatus.TabIndex = 1;
+            txtProductStatus.Tag = "Product State";
+            txtProductStatus.Validating += txt_Validating;
             // 
-            // lblProductExpiration
+            // lblMaxStockAmt
             // 
-            lblProductExpiration.AutoSize = true;
-            lblProductExpiration.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProductExpiration.Location = new Point(10, 114);
-            lblProductExpiration.Margin = new Padding(4, 0, 4, 0);
-            lblProductExpiration.Name = "lblProductExpiration";
-            lblProductExpiration.Size = new Size(166, 25);
-            lblProductExpiration.TabIndex = 2;
-            lblProductExpiration.Text = "Earliest Expiration";
+            lblMaxStockAmt.AutoSize = true;
+            lblMaxStockAmt.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblMaxStockAmt.Location = new Point(10, 114);
+            lblMaxStockAmt.Margin = new Padding(4, 0, 4, 0);
+            lblMaxStockAmt.Name = "lblMaxStockAmt";
+            lblMaxStockAmt.Size = new Size(226, 25);
+            lblMaxStockAmt.TabIndex = 2;
+            lblMaxStockAmt.Text = "Maximum Stock Amount";
             // 
             // lblProductStatus
             // 
@@ -260,6 +275,8 @@
             txtProductCategory.Name = "txtProductCategory";
             txtProductCategory.Size = new Size(300, 32);
             txtProductCategory.TabIndex = 5;
+            txtProductCategory.Tag = "Product Category";
+            txtProductCategory.Validating += txt_Validating;
             // 
             // btnDelete
             // 
@@ -270,6 +287,7 @@
             btnDelete.TabIndex = 8;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // txtProductDescription
             // 
@@ -279,6 +297,7 @@
             txtProductDescription.Name = "txtProductDescription";
             txtProductDescription.Size = new Size(300, 32);
             txtProductDescription.TabIndex = 4;
+            txtProductDescription.Tag = "Product Description";
             // 
             // btnLast
             // 
@@ -289,6 +308,7 @@
             btnLast.TabIndex = 6;
             btnLast.Text = "Last";
             btnLast.UseVisualStyleBackColor = true;
+            btnLast.Click += Navigation_Handler;
             // 
             // btnNext
             // 
@@ -299,6 +319,7 @@
             btnNext.TabIndex = 5;
             btnNext.Text = "Next";
             btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += Navigation_Handler;
             // 
             // txtProductName
             // 
@@ -308,6 +329,8 @@
             txtProductName.Name = "txtProductName";
             txtProductName.Size = new Size(300, 32);
             txtProductName.TabIndex = 3;
+            txtProductName.Tag = "Product Name";
+            txtProductName.Validating += txt_Validating;
             // 
             // btnFirst
             // 
@@ -318,6 +341,7 @@
             btnFirst.TabIndex = 3;
             btnFirst.Text = "First";
             btnFirst.UseVisualStyleBackColor = true;
+            btnFirst.Click += Navigation_Handler;
             // 
             // lblProductDescription
             // 
@@ -350,6 +374,7 @@
             btnAdd.TabIndex = 7;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnCancel
             // 
@@ -360,6 +385,7 @@
             btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // grpProduct
             // 
@@ -390,6 +416,11 @@
             lblProductName.TabIndex = 0;
             lblProductName.Text = "Name";
             // 
+            // errProvider
+            // 
+            errProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            errProvider.ContainerControl = this;
+            // 
             // frmProducts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -408,6 +439,7 @@
             Controls.Add(grpProduct);
             Name = "frmProducts";
             Text = "Products";
+            Load += frmProducts_Load;
             ((System.ComponentModel.ISupportInitialize)imgProductPhoto).EndInit();
             grpProductDetails.ResumeLayout(false);
             grpProductDetails.PerformLayout();
@@ -415,6 +447,7 @@
             grpProductState.PerformLayout();
             grpProduct.ResumeLayout(false);
             grpProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -433,9 +466,9 @@
         private Label lblProductIdValue;
         private Label lblProductId;
         private GroupBox grpProductState;
-        private TextBox txtProductExpiration;
+        private TextBox txtMaxStockAmt;
         private TextBox txtProductStatus;
-        private Label lblProductExpiration;
+        private Label lblMaxStockAmt;
         private Label lblProductStatus;
         private TextBox txtProductCategory;
         private Button btnDelete;
@@ -450,5 +483,6 @@
         private Button btnCancel;
         private GroupBox grpProduct;
         private Label lblProductName;
+        private ErrorProvider errProvider;
     }
 }

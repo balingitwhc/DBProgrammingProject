@@ -114,3 +114,30 @@ FROM
 ) AS q
 WHERE q.EmployeeId = 4
 ORDER BY q.LastName,q.FirstName
+
+
+-------------------------------------------------------------------------------------------------
+
+SELECT * FROM Products ORDER BY ProductName
+
+SELECT * FROM Products WHERE ProductId = 1
+
+SELECT 
+(
+    SELECT TOP(1) ProductId as FirstProductId FROM Products ORDER BY ProductName
+) as FirstProductId,
+q.PreviousProductId,
+q.NextProductId,
+(
+    SELECT TOP(1) ProductId as LastProductId FROM Products ORDER BY ProductName Desc
+) as LastProductId
+FROM
+(
+    SELECT ProductId, ProductName,
+    LEAD(ProductId) OVER(ORDER BY ProductName) AS NextProductId,
+    LAG(ProductId) OVER(ORDER BY ProductName) AS PreviousProductId,
+    ROW_NUMBER() OVER(ORDER BY ProductName) AS 'RowNumber'
+    FROM Products
+) AS q
+WHERE q.ProductId = 1
+ORDER BY q.ProductName
