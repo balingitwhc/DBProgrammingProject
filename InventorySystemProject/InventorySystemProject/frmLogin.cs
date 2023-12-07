@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace InventorySystemProject
 {
-    public partial class Products : Form
+    public partial class frmLogin : Form
     {
-        public Products()
+        public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelQuit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace InventorySystemProject
 {
-    partial class Products
+    partial class frmProducts
     {
         /// <summary>
         /// Required designer variable.
@@ -390,7 +390,7 @@
             lblProductName.TabIndex = 0;
             lblProductName.Text = "Name";
             // 
-            // Products
+            // frmProducts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -406,7 +406,7 @@
             Controls.Add(btnAdd);
             Controls.Add(btnCancel);
             Controls.Add(grpProduct);
-            Name = "Products";
+            Name = "frmProducts";
             Text = "Products";
             ((System.ComponentModel.ISupportInitialize)imgProductPhoto).EndInit();
             grpProductDetails.ResumeLayout(false);

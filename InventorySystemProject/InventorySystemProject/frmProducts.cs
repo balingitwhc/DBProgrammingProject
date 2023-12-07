@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UT = InventorySystemProject.UIUtilities;
 
 namespace InventorySystemProject
 {
-    public partial class Employees : Form
+    public partial class frmProducts : Form
     {
-        public Employees()
+        public frmProducts()
         {
             InitializeComponent();
         }

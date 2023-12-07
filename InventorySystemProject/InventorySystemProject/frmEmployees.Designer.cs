@@ -1,6 +1,6 @@
 ﻿namespace InventorySystemProject
 {
-    partial class Employees
+    partial class frmEmployees
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtPhone = new TextBox();
             lblEmail = new Label();
             lblPhone = new Label();
@@ -58,10 +59,12 @@
             lblLastName = new Label();
             lblFirstName = new Label();
             grpName = new GroupBox();
+            errProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)imgProfilePhoto).BeginInit();
             grpEmployeeDetails.SuspendLayout();
             grpContactInfo.SuspendLayout();
             grpName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errProvider).BeginInit();
             SuspendLayout();
             // 
             // txtPhone
@@ -72,6 +75,7 @@
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(300, 32);
             txtPhone.TabIndex = 1;
+            txtPhone.Tag = "Phone Number";
             // 
             // lblEmail
             // 
@@ -104,6 +108,7 @@
             btnFirst.TabIndex = 3;
             btnFirst.Text = "First";
             btnFirst.UseVisualStyleBackColor = true;
+            btnFirst.Click += Navigation_Handler;
             // 
             // txtPassword
             // 
@@ -113,6 +118,8 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(300, 32);
             txtPassword.TabIndex = 7;
+            txtPassword.Tag = "Password";
+            txtPassword.Validating += txt_Validating;
             // 
             // btnLast
             // 
@@ -123,6 +130,7 @@
             btnLast.TabIndex = 6;
             btnLast.Text = "Last";
             btnLast.UseVisualStyleBackColor = true;
+            btnLast.Click += Navigation_Handler;
             // 
             // btnNext
             // 
@@ -133,6 +141,7 @@
             btnNext.TabIndex = 5;
             btnNext.Text = "Next";
             btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += Navigation_Handler;
             // 
             // btnAdd
             // 
@@ -143,6 +152,7 @@
             btnAdd.TabIndex = 7;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // txtUsername
             // 
@@ -152,6 +162,8 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(300, 32);
             txtUsername.TabIndex = 6;
+            txtUsername.Tag = "Username";
+            txtUsername.Validating += txt_Validating;
             // 
             // txtPosition
             // 
@@ -161,6 +173,8 @@
             txtPosition.Name = "txtPosition";
             txtPosition.Size = new Size(300, 32);
             txtPosition.TabIndex = 5;
+            txtPosition.Tag = "Position";
+            txtPosition.Validating += txt_Validating;
             // 
             // lblPassword
             // 
@@ -215,6 +229,7 @@
             btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnDelete
             // 
@@ -225,6 +240,7 @@
             btnDelete.TabIndex = 8;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnPrevious
             // 
@@ -235,6 +251,7 @@
             btnPrevious.TabIndex = 4;
             btnPrevious.Text = "Previous";
             btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += Navigation_Handler;
             // 
             // lblEmployeeId
             // 
@@ -264,6 +281,7 @@
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // grpEmployeeDetails
             // 
@@ -310,6 +328,8 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(300, 32);
             txtEmail.TabIndex = 3;
+            txtEmail.Tag = "Email Address";
+            txtEmail.Validating += txt_Validating;
             // 
             // txtLastName
             // 
@@ -319,6 +339,8 @@
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(300, 32);
             txtLastName.TabIndex = 5;
+            txtLastName.Tag = "Last Name";
+            txtLastName.Validating += txt_Validating;
             // 
             // txtMiddleName
             // 
@@ -328,6 +350,7 @@
             txtMiddleName.Name = "txtMiddleName";
             txtMiddleName.Size = new Size(300, 32);
             txtMiddleName.TabIndex = 4;
+            txtMiddleName.Tag = "Middle Name";
             // 
             // txtFirstName
             // 
@@ -337,6 +360,8 @@
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(300, 32);
             txtFirstName.TabIndex = 3;
+            txtFirstName.Tag = "First Name";
+            txtFirstName.Validating += txt_Validating;
             // 
             // lblMiddleName
             // 
@@ -389,7 +414,12 @@
             grpName.TabStop = false;
             grpName.Text = "Name";
             // 
-            // Employees
+            // errProvider
+            // 
+            errProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            errProvider.ContainerControl = this;
+            // 
+            // frmEmployees
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -405,8 +435,9 @@
             Controls.Add(grpEmployeeDetails);
             Controls.Add(grpContactInfo);
             Controls.Add(grpName);
-            Name = "Employees";
+            Name = "frmEmployees";
             Text = "Employees";
+            Load += frmEmployees_Load;
             ((System.ComponentModel.ISupportInitialize)imgProfilePhoto).EndInit();
             grpEmployeeDetails.ResumeLayout(false);
             grpEmployeeDetails.PerformLayout();
@@ -414,6 +445,7 @@
             grpContactInfo.PerformLayout();
             grpName.ResumeLayout(false);
             grpName.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -449,5 +481,6 @@
         private Label lblLastName;
         private Label lblFirstName;
         private GroupBox grpName;
+        private ErrorProvider errProvider;
     }
 }

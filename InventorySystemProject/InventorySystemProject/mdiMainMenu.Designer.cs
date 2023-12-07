@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdiMainMenu));
-            menuStrip = new MenuStrip();
+            mnuStrip = new MenuStrip();
             maintenanceToolStripMenuItem = new ToolStripMenuItem();
             employeesToolStripMenuItem = new ToolStripMenuItem();
             productsToolStripMenuItem = new ToolStripMenuItem();
@@ -58,51 +58,54 @@
             statusStrip = new StatusStrip();
             lblStatusMDI = new ToolStripStatusLabel();
             toolTip = new ToolTip(components);
-            dataGridView1 = new DataGridView();
-            menuStrip.SuspendLayout();
+            dgvMain = new DataGridView();
+            mnuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMain).BeginInit();
             SuspendLayout();
             // 
-            // menuStrip
+            // mnuStrip
             // 
-            menuStrip.Items.AddRange(new ToolStripItem[] { maintenanceToolStripMenuItem, viewMenu, windowsMenu, helpMenu });
-            menuStrip.Location = new Point(0, 0);
-            menuStrip.MdiWindowListItem = windowsMenu;
-            menuStrip.Name = "menuStrip";
-            menuStrip.Padding = new Padding(7, 2, 0, 2);
-            menuStrip.Size = new Size(1264, 24);
-            menuStrip.TabIndex = 0;
-            menuStrip.Text = "MenuStrip";
+            mnuStrip.Items.AddRange(new ToolStripItem[] { maintenanceToolStripMenuItem, viewMenu, windowsMenu, helpMenu });
+            mnuStrip.Location = new Point(0, 0);
+            mnuStrip.MdiWindowListItem = windowsMenu;
+            mnuStrip.Name = "mnuStrip";
+            mnuStrip.Padding = new Padding(7, 2, 0, 2);
+            mnuStrip.Size = new Size(1264, 24);
+            mnuStrip.TabIndex = 0;
+            mnuStrip.Text = "MenuStrip";
             // 
             // maintenanceToolStripMenuItem
             // 
             maintenanceToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { employeesToolStripMenuItem, productsToolStripMenuItem, inventoryToolStripMenuItem });
             maintenanceToolStripMenuItem.Name = "maintenanceToolStripMenuItem";
             maintenanceToolStripMenuItem.Size = new Size(88, 20);
-            maintenanceToolStripMenuItem.Tag = "mnuMaintenance";
+            maintenanceToolStripMenuItem.Tag = "";
             maintenanceToolStripMenuItem.Text = "&Maintenance";
             // 
             // employeesToolStripMenuItem
             // 
             employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            employeesToolStripMenuItem.Size = new Size(131, 22);
+            employeesToolStripMenuItem.Size = new Size(180, 22);
             employeesToolStripMenuItem.Tag = "mnuMaintenanceEmployee";
-            employeesToolStripMenuItem.Text = "Employees";
+            employeesToolStripMenuItem.Text = "&Employees";
+            employeesToolStripMenuItem.Click += ShowNewForm;
             // 
             // productsToolStripMenuItem
             // 
             productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            productsToolStripMenuItem.Size = new Size(131, 22);
+            productsToolStripMenuItem.Size = new Size(180, 22);
             productsToolStripMenuItem.Tag = "mnuMaintenanceProduct";
-            productsToolStripMenuItem.Text = "Products";
+            productsToolStripMenuItem.Text = "&Products";
+            productsToolStripMenuItem.Click += ShowNewForm;
             // 
             // inventoryToolStripMenuItem
             // 
             inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            inventoryToolStripMenuItem.Size = new Size(131, 22);
+            inventoryToolStripMenuItem.Size = new Size(180, 22);
             inventoryToolStripMenuItem.Tag = "mnuMaintenanceInventory";
-            inventoryToolStripMenuItem.Text = "Inventory";
+            inventoryToolStripMenuItem.Text = "&Inventory";
+            inventoryToolStripMenuItem.Click += ShowNewForm;
             // 
             // viewMenu
             // 
@@ -114,33 +117,33 @@
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(149, 6);
+            toolStripSeparator1.Size = new Size(177, 6);
             // 
             // logsToolStripMenuItem
             // 
             logsToolStripMenuItem.Name = "logsToolStripMenuItem";
-            logsToolStripMenuItem.Size = new Size(152, 22);
+            logsToolStripMenuItem.Size = new Size(180, 22);
             logsToolStripMenuItem.Tag = "mnuViewEmployees";
-            logsToolStripMenuItem.Text = "Employees";
+            logsToolStripMenuItem.Text = "E&mployees";
             // 
             // productsToolStripMenuItem1
             // 
             productsToolStripMenuItem1.Name = "productsToolStripMenuItem1";
-            productsToolStripMenuItem1.Size = new Size(152, 22);
+            productsToolStripMenuItem1.Size = new Size(180, 22);
             productsToolStripMenuItem1.Tag = "mnuViewProducts";
-            productsToolStripMenuItem1.Text = "Products";
+            productsToolStripMenuItem1.Text = "P&roducts";
             // 
             // logsToolStripMenuItem1
             // 
             logsToolStripMenuItem1.Name = "logsToolStripMenuItem1";
-            logsToolStripMenuItem1.Size = new Size(152, 22);
+            logsToolStripMenuItem1.Size = new Size(180, 22);
             logsToolStripMenuItem1.Tag = "mnuViewInventoryLogs";
-            logsToolStripMenuItem1.Text = "Inventory Logs";
+            logsToolStripMenuItem1.Text = "I&nventory Logs";
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(149, 6);
+            toolStripSeparator2.Size = new Size(177, 6);
             // 
             // statusBarToolStripMenuItem
             // 
@@ -148,7 +151,7 @@
             statusBarToolStripMenuItem.CheckOnClick = true;
             statusBarToolStripMenuItem.CheckState = CheckState.Checked;
             statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            statusBarToolStripMenuItem.Size = new Size(152, 22);
+            statusBarToolStripMenuItem.Size = new Size(180, 22);
             statusBarToolStripMenuItem.Text = "&Status Bar";
             statusBarToolStripMenuItem.Click += StatusBarToolStripMenuItem_Click;
             // 
@@ -212,7 +215,7 @@
             // 
             contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
             contentsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
-            contentsToolStripMenuItem.Size = new Size(168, 22);
+            contentsToolStripMenuItem.Size = new Size(180, 22);
             contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
@@ -220,7 +223,7 @@
             indexToolStripMenuItem.Image = (Image)resources.GetObject("indexToolStripMenuItem.Image");
             indexToolStripMenuItem.ImageTransparentColor = Color.Black;
             indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            indexToolStripMenuItem.Size = new Size(168, 22);
+            indexToolStripMenuItem.Size = new Size(180, 22);
             indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
@@ -228,18 +231,18 @@
             searchToolStripMenuItem.Image = (Image)resources.GetObject("searchToolStripMenuItem.Image");
             searchToolStripMenuItem.ImageTransparentColor = Color.Black;
             searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            searchToolStripMenuItem.Size = new Size(168, 22);
+            searchToolStripMenuItem.Size = new Size(180, 22);
             searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator8
             // 
             toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(165, 6);
+            toolStripSeparator8.Size = new Size(177, 6);
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(168, 22);
+            aboutToolStripMenuItem.Size = new Size(180, 22);
             aboutToolStripMenuItem.Text = "&About ... ...";
             // 
             // statusStrip
@@ -258,46 +261,46 @@
             lblStatusMDI.Size = new Size(80, 17);
             lblStatusMDI.Text = "<MDI Status>";
             // 
-            // dataGridView1
+            // dgvMain
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 24);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1264, 635);
-            dataGridView1.TabIndex = 4;
+            dgvMain.AllowUserToAddRows = false;
+            dgvMain.AllowUserToDeleteRows = false;
+            dgvMain.AllowUserToOrderColumns = true;
+            dgvMain.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMain.Dock = DockStyle.Fill;
+            dgvMain.Location = new Point(0, 24);
+            dgvMain.Name = "dgvMain";
+            dgvMain.ReadOnly = true;
+            dgvMain.RowTemplate.Height = 25;
+            dgvMain.Size = new Size(1264, 635);
+            dgvMain.TabIndex = 4;
             // 
             // mdiMainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvMain);
             Controls.Add(statusStrip);
-            Controls.Add(menuStrip);
+            Controls.Add(mnuStrip);
             IsMdiContainer = true;
-            MainMenuStrip = menuStrip;
+            MainMenuStrip = mnuStrip;
             Margin = new Padding(4, 3, 4, 3);
             Name = "mdiMainMenu";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MDIParent1";
-            menuStrip.ResumeLayout(false);
-            menuStrip.PerformLayout();
+            Text = "Inventory Management System - Rinzler's Grocery";
+            mnuStrip.ResumeLayout(false);
+            mnuStrip.PerformLayout();
             statusStrip.ResumeLayout(false);
             statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMain).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
         #endregion
 
 
-        private MenuStrip menuStrip;
+        private MenuStrip mnuStrip;
         private StatusStrip statusStrip;
         private ToolStripSeparator toolStripSeparator8;
         private ToolStripStatusLabel lblStatusMDI;
@@ -324,7 +327,7 @@
         private ToolStripMenuItem logsToolStripMenuItem;
         private ToolStripMenuItem productsToolStripMenuItem1;
         private ToolStripMenuItem logsToolStripMenuItem1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvMain;
         private ToolStripSeparator toolStripSeparator2;
     }
 }

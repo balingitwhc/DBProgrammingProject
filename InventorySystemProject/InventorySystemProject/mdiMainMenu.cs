@@ -19,13 +19,53 @@ namespace InventorySystemProject
             InitializeComponent();
         }
 
+        public ToolStripStatusLabel StatusStripLabel
+        {
+            get { return lblStatusMDI; }
+            set { lblStatusMDI = value; }
+        }
+
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
-            childForm.Show();
+            Form childForm = null;
+            ToolStripMenuItem m = (ToolStripMenuItem)sender;
+
+            switch (m.Tag)
+            {
+                case "mnuMaintenanceEmployee":
+                    lblStatusMDI.Text = "Employee Form Loaded...";
+                    childForm = new frmEmployees();
+                    break;
+                case "mnuMaintenanceProduct":
+                    lblStatusMDI.Text = "Product Form Loaded...";
+                    childForm = new frmProducts();
+                    break;
+                case "mnuMaintenanceInventory":
+                    lblStatusMDI.Text = "Inventory Form Loaded...";
+                    childForm = new frmInventoryLogs();
+                    break;
+                default:
+                    break;
+            }
+
+            if (childForm != null)
+            {
+                foreach (Form f in this.MdiChildren)
+                {
+                    if (f.GetType() == childForm.GetType())
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+
+                childForm.MdiParent = this;
+                //childForm.Text = "Window " + childFormNumber++;
+                childForm.Show();
+            }
         }
+
+        #region [Auto-Generated]
 
         private void OpenFile(object sender, EventArgs e)
         {
@@ -81,5 +121,7 @@ namespace InventorySystemProject
                 childForm.Close();
             }
         }
+
+        #endregion
     }
 }

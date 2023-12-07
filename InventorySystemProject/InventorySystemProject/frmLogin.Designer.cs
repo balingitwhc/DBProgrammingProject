@@ -1,6 +1,6 @@
 ﻿namespace InventorySystemProject
 {
-    partial class Login
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -94,7 +94,7 @@
             btnCancelQuit.UseVisualStyleBackColor = true;
             btnCancelQuit.Click += btnCancelQuit_Click;
             // 
-            // Login
+            // frmLogin
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -107,7 +107,8 @@
             Controls.Add(lblUsername);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
-            Name = "Login";
+            Name = "frmLogin";
+            Tag = "";
             Text = "Login";
             ResumeLayout(false);
             PerformLayout();

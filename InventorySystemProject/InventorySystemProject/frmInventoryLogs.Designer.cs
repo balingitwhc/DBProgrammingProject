@@ -1,6 +1,6 @@
 ﻿namespace InventorySystemProject
 {
-    partial class InventoryLogs
+    partial class frmInventoryLogs
     {
         /// <summary>
         /// Required designer variable.
@@ -55,13 +55,13 @@
             btnPrevious = new Button();
             btnSave = new Button();
             grpInventoryLog = new GroupBox();
+            comboBox1 = new ComboBox();
             dtpLogExpiration = new DateTimePicker();
             rdoRemove = new RadioButton();
             rdoAdd = new RadioButton();
             grpProduct = new GroupBox();
             grpNotes = new GroupBox();
             txtLogNotes = new TextBox();
-            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)imgLogPhoto).BeginInit();
             grpEmployee.SuspendLayout();
             grpInventoryLog.SuspendLayout();
@@ -360,6 +360,15 @@
             grpInventoryLog.TabStop = false;
             grpInventoryLog.Text = "Inventory Log Details";
             // 
+            // comboBox1
+            // 
+            comboBox1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(144, 131);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(300, 33);
+            comboBox1.TabIndex = 11;
+            // 
             // dtpLogExpiration
             // 
             dtpLogExpiration.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -432,16 +441,7 @@
             txtLogNotes.Size = new Size(498, 72);
             txtLogNotes.TabIndex = 0;
             // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(144, 131);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(300, 33);
-            comboBox1.TabIndex = 11;
-            // 
-            // InventoryLogs
+            // frmInventoryLogs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -458,7 +458,8 @@
             Controls.Add(btnSave);
             Controls.Add(grpInventoryLog);
             Controls.Add(grpProduct);
-            Name = "InventoryLogs";
+            Name = "frmInventoryLogs";
+            Tag = "";
             Text = "Inventory";
             ((System.ComponentModel.ISupportInitialize)imgLogPhoto).EndInit();
             grpEmployee.ResumeLayout(false);
