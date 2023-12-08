@@ -69,5 +69,15 @@ namespace InventorySystemProject.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap liuba_bilyk_wU_TbWqdPJI_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("liuba-bilyk-wU_TbWqdPJI-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -209,6 +209,11 @@ SELECT
 
 
 
-SELECT [EmployeeId], [Position]
+SELECT CONCAT(FirstName, ' ',LastName) AS [EmployeeName] ,[EmployeeId], [Position]
 FROM Employees
 WHERE Username = 'eanderson' AND [Password] = HASHBYTES('SHA2_256', 'password123')
+
+
+SELECT EmployeeId, LastName + ', ' + FirstName as [WholeName], Position
+FROM Employees
+ORDER BY LastName, FirstName
