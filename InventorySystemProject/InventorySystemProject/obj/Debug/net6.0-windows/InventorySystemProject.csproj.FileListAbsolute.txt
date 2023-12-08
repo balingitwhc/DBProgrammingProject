@@ -11,8 +11,11 @@ C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemPr
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.csproj.AssemblyReference.cache
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.frmLogin.resources
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Employees.resources
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.InventoryLogs.resources
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Login.resources
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.mdiMainMenu.resources
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Products.resources
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Properties.Resources.resources
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Splash.resources
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.csproj.GenerateResource.cache
@@ -26,6 +29,3 @@ C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemPr
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.pdb
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.genruntimeconfig.cache
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\ref\InventorySystemProject.dll
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Employees.resources
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.InventoryLogs.resources
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Products.resources

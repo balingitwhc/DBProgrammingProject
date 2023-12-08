@@ -7,7 +7,7 @@
     <Compile Update="InventoryLogs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmLogin.cs">
+    <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Products.cs">

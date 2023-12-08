@@ -1,6 +1,6 @@
 ﻿namespace InventorySystemProject
 {
-    partial class frmLogin
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,8 @@
             txtUsername = new TextBox();
             btnLogin = new Button();
             txtPassword = new TextBox();
-            btnCancelQuit = new Button();
+            btnCancel = new Button();
+            chkShowPass = new CheckBox();
             SuspendLayout();
             // 
             // lblUsername
@@ -83,23 +84,36 @@
             txtPassword.Size = new Size(328, 29);
             txtPassword.TabIndex = 1;
             // 
-            // btnCancelQuit
+            // btnCancel
             // 
-            btnCancelQuit.Location = new Point(195, 195);
-            btnCancelQuit.Margin = new Padding(4);
-            btnCancelQuit.Name = "btnCancelQuit";
-            btnCancelQuit.Size = new Size(161, 70);
-            btnCancelQuit.TabIndex = 2;
-            btnCancelQuit.Text = "Cancel / Quit";
-            btnCancelQuit.UseVisualStyleBackColor = true;
-            btnCancelQuit.Click += btnCancelQuit_Click;
+            btnCancel.Location = new Point(195, 195);
+            btnCancel.Margin = new Padding(4);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(161, 70);
+            btnCancel.TabIndex = 2;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
-            // frmLogin
+            // chkShowPass
+            // 
+            chkShowPass.AutoSize = true;
+            chkShowPass.CheckAlign = ContentAlignment.MiddleRight;
+            chkShowPass.Location = new Point(218, 25);
+            chkShowPass.Name = "chkShowPass";
+            chkShowPass.Size = new Size(138, 25);
+            chkShowPass.TabIndex = 3;
+            chkShowPass.Text = "Show Password";
+            chkShowPass.UseVisualStyleBackColor = true;
+            chkShowPass.CheckedChanged += chkShowPass_CheckedChanged;
+            // 
+            // Login
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(391, 281);
-            Controls.Add(btnCancelQuit);
+            Controls.Add(chkShowPass);
+            Controls.Add(btnCancel);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
@@ -107,9 +121,10 @@
             Controls.Add(lblUsername);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
-            Name = "frmLogin";
+            Name = "Login";
             Tag = "";
             Text = "Login";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,6 +136,7 @@
         private TextBox txtUsername;
         private Button btnLogin;
         private TextBox txtPassword;
-        private Button btnCancelQuit;
+        private Button btnCancel;
+        private CheckBox chkShowPass;
     }
 }

@@ -123,9 +123,32 @@ namespace InventorySystemProject
 
         private void mdiMainMenu_Load(object sender, EventArgs e)
         {
-            Form S = new frmLogin();
-            S.MdiParent = this;
-            S.Show();
+            Login loginForm = new();
+
+            loginForm.StartPosition = FormStartPosition.CenterParent;
+
+            DialogResult result = loginForm.ShowDialog();
+
+            string userAccess = loginForm.userPosition;
+            lblStatusMDI.Text = $"User Logged in as : {userAccess}";
+
+            if (result == DialogResult.OK)
+            {
+                MessageBox.Show("LOGIN APPROVED!");
+
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                //MessageBox.Show("Canceled");
+                this.Close();
+
+            }
+            else if (result == DialogResult.Abort)
+            {
+                MessageBox.Show("ACCESS DENIED!");
+                this.Close();
+
+            }
         }
     }
 }

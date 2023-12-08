@@ -251,7 +251,7 @@ namespace InventorySystemProject
                     ,[Email]        = '{txtEmail.Text.Trim()}'
                     ,[Phone]        = '{txtPhone.Text.Trim()}'
                     ,[Username]     = '{txtUsername.Text.Trim()}'
-                    ,[Password]     = '{txtPassword.Text.Trim()}'
+                    ,[Password]     = HASHBYTES('SHA2_256', '{txtPassword.Text.Trim()}')
                 WHERE EmployeeId    = {lblEmployeeIdValue.Text}
             ";
 
@@ -275,7 +275,7 @@ namespace InventorySystemProject
         {
             string sqlInsertEmployee = $@"
                 INSERT INTO [dbo].[Employees]
-                    ([FirstName],[MiddleName],[LastName],[Position],[Email],[Phone],[Username],[Password])
+                    ([FirstName], [MiddleName], [LastName], [Position], [Email], [Phone], [Username],[Password])
                 VALUES
                     (
                         '{txtFirstName.Text.Trim()}'
@@ -285,7 +285,7 @@ namespace InventorySystemProject
                         ,'{txtEmail.Text.Trim()}'
                         ,'{txtPhone.Text.Trim()}'
                         ,'{txtUsername.Text.Trim()}'
-                        ,'{txtPassword.Text.Trim()}'
+                        ,HASHBYTES('SHA2_256', '{txtPassword.Text.Trim()}')
                     )
             ";
 

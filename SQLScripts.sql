@@ -50,11 +50,11 @@ CREATE TABLE Inventory (
 
 -- Insert sample data into Employees, Products, and Inventory tables
 INSERT INTO Employees VALUES
-('Emily', NULL, 'Anderson', 'Manager', 'emily.anderson@email.com', NULL, 'eanderson', 'password123'),
-('Alexander', 'James', 'Mitchell', 'Developer', 'alex.mitchell@email.com', '555-5678', 'amitchell', 'securepass'),
-('Olivia', 'Marie', 'Patel', 'Designer', 'olivia.patel@email.com', '555-9876', 'opatel', 'pass123'),
-('Benjamin', 'Thomas', 'Reynolds', 'Analyst', 'ben.reynolds@email.com', '555-4321', 'breynolds', 'qwerty'),
-('Sophia', NULL, 'Carter', 'Coordinator', 'sophia.carter@email.com', '555-8765', 'scarter', 'letmein');
+('Emily', NULL, 'Anderson', 'Deli', 'emily.anderson@email.com', NULL, 'eanderson', HASHBYTES('SHA2_256', 'password123')),
+('Alexander', 'James', 'Mitchell', 'Cashier', 'alex.mitchell@email.com', '555-5678', 'amitchell', HASHBYTES('SHA2_256', 'securepass')),
+('Olivia', 'Marie', 'Patel', 'Stock Clerk', 'olivia.patel@email.com', '555-9876', 'opatel', HASHBYTES('SHA2_256', 'pass123')),
+('Benjamin', 'Thomas', 'Reynolds', 'Manager', 'ben.reynolds@email.com', '555-4321', 'breynolds', HASHBYTES('SHA2_256', 'qwerty')),
+('Sophia', NULL, 'Carter', 'Administrator', 'sophia.carter@email.com', '555-8765', 'scarter', HASHBYTES('SHA2_256', 'letmein'));
 
 INSERT INTO Products VALUES
 ('Apples', 'Fresh and crisp apples', 'Fruits', 100, 'Pound', 1.99, 'In Stock', 200),
@@ -141,3 +141,74 @@ FROM
 ) AS q
 WHERE q.ProductId = 1
 ORDER BY q.ProductName
+
+
+
+
+
+
+-----------------------------------------------------------------------
+
+
+
+SELECT * FROM Inventory ORDER BY ExpirationDate, InventoryLogDate
+
+
+SELECT
+	InventoryLogId,QuantityChange,InventoryLogDate,ExpirationDate,InventoryAction,Notes,
+	Inv.EmployeeId, CONCAT(Emp.FirstName, ' ',Emp.LastName) AS [EmployeeName],Emp.Position,
+	Inv.ProductId, Prod.ProductName,Prod.ProductDescription,Prod.ProductCategory
+FROM    Inventory AS Inv
+JOIN    Employees AS Emp ON Inv.EmployeeID = Emp.EmployeeID
+JOIN    Products AS Prod ON Inv.ProductID = Prod.ProductID
+--WHERE   InventoryLogID = 1
+ORDER BY ExpirationDate, InventoryLogDate
+
+
+SELECT 
+(
+    SELECT TOP(1) InventoryLogId as FirstInventoryLogId FROM Inventory ORDER BY ExpirationDate, InventoryLogDate
+) as FirstInventoryLogId,
+q.PreviousInventoryLogId,
+q.NextInventoryLogId,
+(
+    SELECT TOP(1) InventoryLogId as LastInventoryLogId FROM Inventory ORDER BY ExpirationDate Desc,InventoryLogDate Desc
+) as LastInventoryLogId, (SELECT COUNT(InventoryLogId) FROM Inventory) as LogCount
+FROM
+(
+    SELECT InventoryLogId, ExpirationDate, InventoryLogDate,
+    LEAD(InventoryLogId) OVER(ORDER BY ExpirationDate, InventoryLogDate) AS NextInventoryLogId,
+    LAG(InventoryLogId) OVER(ORDER BY ExpirationDate, InventoryLogDate) AS PreviousInventoryLogId,
+    ROW_NUMBER() OVER(ORDER BY ExpirationDate, InventoryLogDate) AS 'RowNumber'
+    FROM Inventory
+) AS q
+WHERE q.InventoryLogId = 1
+ORDER BY q.ExpirationDate,q.InventoryLogDate
+
+------------------------------------------------------------------------------------------------------
+
+UPDATE Employees SET [Position] = 'Deli' WHERE EmployeeId = 1
+UPDATE Employees SET [Position] = 'Cashier' WHERE EmployeeId = 2
+UPDATE Employees SET [Position] = 'Stock Clerk' WHERE EmployeeId = 3
+UPDATE Employees SET [Position] = 'Manager' WHERE EmployeeId = 4
+UPDATE Employees SET [Position] = 'Administrator' WHERE EmployeeId = 5
+
+SELECT * FROM Employees
+
+
+SELECT
+    CASE
+        WHEN EXISTS (
+            SELECT *
+            FROM Employees
+            WHERE Username = 'eanderson'
+              AND [Password] = HASHBYTES('SHA2_256', 'password123')
+        ) THEN 1  -- Password matches
+        ELSE 0  -- Password does not match
+    END AS PasswordMatch;
+
+
+
+SELECT [EmployeeId], [Position]
+FROM Employees
+WHERE Username = 'eanderson' AND [Password] = HASHBYTES('SHA2_256', 'password123')
