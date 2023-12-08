@@ -16,7 +16,7 @@ namespace InventorySystemProject
         private int childFormNumber = 0;
 
         public ToolStripStatusLabel StatusStripLabel
-        { get { return lblStatusMDI; } set { lblStatusMDI = value; } }
+        { get { return lblAccessStatusMDI; } set { lblAccessStatusMDI = value; } }
 
         public mdiMainMenu()
         {
@@ -64,7 +64,7 @@ namespace InventorySystemProject
                 }
 
                 childForm.MdiParent = this;
-                
+
                 /*if (childForm.Tag == "mnuViewEmployees")
                 {
                     childForm.WindowState = FormWindowState.Maximized;
@@ -135,14 +135,14 @@ namespace InventorySystemProject
 
         private void mdiMainMenu_Load(object sender, EventArgs e)
         {
-            /*Login loginForm = new();
+            Login loginForm = new();
 
             loginForm.StartPosition = FormStartPosition.CenterParent;
 
             DialogResult result = loginForm.ShowDialog();
 
             string userAccess = GlobalData.accessLevel;
-            lblStatusMDI.Text = $"User Logged in as : {userAccess}";
+            lblAccessStatusMDI.Text = $"User Logged in as : {userAccess}";
 
             if (result == DialogResult.OK)
             {
@@ -159,8 +159,7 @@ namespace InventorySystemProject
             {
                 MessageBox.Show("ACCESS DENIED!");
                 this.Close();
-
-            }*/
+            }
         }
     }
 }

@@ -63,9 +63,9 @@ namespace InventorySystemProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image2 {
+        internal static System.Drawing.Bitmap grocerySplash {
             get {
-                object obj = ResourceManager.GetObject("image2", resourceCulture);
+                object obj = ResourceManager.GetObject("grocerySplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace InventorySystemProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap liuba_bilyk_wU_TbWqdPJI_unsplash {
+        internal static System.Drawing.Bitmap image2 {
             get {
-                object obj = ResourceManager.GetObject("liuba-bilyk-wU_TbWqdPJI-unsplash", resourceCulture);
+                object obj = ResourceManager.GetObject("image2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -217,3 +217,12 @@ WHERE Username = 'eanderson' AND [Password] = HASHBYTES('SHA2_256', 'password123
 SELECT EmployeeId, LastName + ', ' + FirstName as [WholeName], Position
 FROM Employees
 ORDER BY LastName, FirstName
+
+SELECT ProductId, ProductName, ProductDescription, ProductCategory, Quantity, State, MaxStock
+FROM Products
+ORDER BY [State] Desc
+
+
+SELECT ProductId, ProductName, ProductDescription, ProductCategory
+FROM Products
+WHERE ProductId = 7

@@ -56,8 +56,9 @@
             toolStripSeparator8 = new ToolStripSeparator();
             aboutToolStripMenuItem = new ToolStripMenuItem();
             statusStrip = new StatusStrip();
-            lblStatusMDI = new ToolStripStatusLabel();
+            lblAccessStatusMDI = new ToolStripStatusLabel();
             toolTip = new ToolTip(components);
+            lblRecordStatusMDI = new ToolStripStatusLabel();
             mnuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
             SuspendLayout();
@@ -245,7 +246,7 @@
             // 
             // statusStrip
             // 
-            statusStrip.Items.AddRange(new ToolStripItem[] { lblStatusMDI });
+            statusStrip.Items.AddRange(new ToolStripItem[] { lblAccessStatusMDI, lblRecordStatusMDI });
             statusStrip.Location = new Point(0, 659);
             statusStrip.Name = "statusStrip";
             statusStrip.Padding = new Padding(1, 0, 16, 0);
@@ -253,11 +254,17 @@
             statusStrip.TabIndex = 2;
             statusStrip.Text = "StatusStrip";
             // 
-            // lblStatusMDI
+            // lblAccessStatusMDI
             // 
-            lblStatusMDI.Name = "lblStatusMDI";
-            lblStatusMDI.Size = new Size(80, 17);
-            lblStatusMDI.Text = "<MDI Status>";
+            lblAccessStatusMDI.Name = "lblAccessStatusMDI";
+            lblAccessStatusMDI.Size = new Size(94, 17);
+            lblAccessStatusMDI.Text = "<Access Status>";
+            // 
+            // lblRecordStatusMDI
+            // 
+            lblRecordStatusMDI.Name = "lblRecordStatusMDI";
+            lblRecordStatusMDI.Size = new Size(95, 17);
+            lblRecordStatusMDI.Text = "<Record Status>";
             // 
             // mdiMainMenu
             // 
@@ -287,7 +294,7 @@
         private MenuStrip mnuStrip;
         private StatusStrip statusStrip;
         private ToolStripSeparator toolStripSeparator8;
-        private ToolStripStatusLabel lblStatusMDI;
+        private ToolStripStatusLabel lblAccessStatusMDI;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem tileHorizontalToolStripMenuItem;
         private ToolStripMenuItem viewMenu;
@@ -314,6 +321,7 @@
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem splashToolStripMenuItem;
         private ToolStripMenuItem loginToolStripMenuItem;
+        private ToolStripStatusLabel lblRecordStatusMDI;
     }
 }
 

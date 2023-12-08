@@ -100,6 +100,7 @@
             Controls.Add(lblCompany);
             Controls.Add(lblVersion);
             Controls.Add(lblProduct);
+            DoubleBuffered = true;
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Splash";

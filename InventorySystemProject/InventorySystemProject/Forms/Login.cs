@@ -29,6 +29,7 @@ namespace InventorySystemProject
         {
             string sql = $@"
                 SELECT CONCAT(FirstName, ' ',LastName) AS [FullName] ,[EmployeeId], [Position]
+                FROM Employees
                 WHERE Username = '{txtUsername.Text.Trim()}'
                     AND [Password] = HASHBYTES('SHA2_256', '{txtPassword.Text.Trim()}')
             ";

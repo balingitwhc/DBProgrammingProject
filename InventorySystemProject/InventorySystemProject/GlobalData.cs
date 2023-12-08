@@ -11,5 +11,7 @@ namespace InventorySystemProject
         public static string accessLevel { get; set; }
         public static string userId { get; set; }
         public static string userFullName { get; set; }
+        public static string lblRecordStatus { get; set; }
+        public static string lblStockStatus { get; set; }
     }
 }

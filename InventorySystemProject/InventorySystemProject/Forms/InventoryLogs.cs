@@ -66,8 +66,11 @@ namespace InventorySystemProject
             lblLogIdValue.Text = string.Empty;
             rdoAdd.Checked = false;
             rdoRemove.Checked = false;
-            dtpLogDate.Value = DateTime.Now;
-            dtpLogExpiration.Value = DateTime.Now;
+            dtpLogDate.Value = DateTime.Now.Date;
+            dtpLogExpiration.Value = DateTime.Now.Date;
+
+            txtEmployeeName.Text = GlobalData.userFullName;
+            txtEmployeePosition.Text = GlobalData.accessLevel;
 
             btnSave.Text = "Create";
             btnAdd.Enabled = false;
@@ -285,15 +288,17 @@ namespace InventorySystemProject
 
         private void SaveInventoryLogChanges()
         {
+            string inventoryAction = rdoAdd.Checked ? "Purchase" : rdoRemove.Checked ? "Sale" : "";
+
             string sql = $@"
-                UPDATE [dbo].[InventoryLogs]
-                SET [EmployeeId]			= '{txtEmployeePosition}'
-                    ,[ProductId]			= '{txtProductName}'
-                    ,[QuantityChange]		= '{txtLogQuantity}'
-                    ,[InventoryLogDate]	    = '{dtpLogDate}'
-                    ,[ExpirationDate]		= '{dtpLogExpiration}'
-                    ,[InventoryAction]	    = '{rdoAdd}'
-                    ,[Notes]				= '{txtLogNotes}'
+                UPDATE [dbo].[Inventory]
+                SET [EmployeeId]			= '{GlobalData.userId.Trim()}'
+                    ,[ProductId]			= '{cmbProducts.SelectedValue}'
+                    ,[QuantityChange]		= {Convert.ToInt32(txtLogQuantity)}
+                    ,[InventoryLogDate]	    = '{dtpLogDate.Text.Trim()}'
+                    ,[ExpirationDate]		= '{dtpLogExpiration.Text.Trim()}'
+                    ,[InventoryAction]	    = '{inventoryAction.Trim()}'
+                    ,[Notes]				= '{txtLogNotes.Text.Trim()}'
                 WHERE InventoryLogId    = {lblLogIdValue.Text}
             ";
 
@@ -306,6 +311,31 @@ namespace InventorySystemProject
             else
             {
                 MessageBox.Show($"Update to InventoryLogId: {lblLogIdValue.Text} was not updated.");
+            }
+
+            string inventoryState = "";
+
+            // INSERT THE BUSINESS RULES HERE ABOUT INVENTORY STATE
+            // DONT FORGET TO ADD THEM TO STATUS LABELS
+
+            string sql2 = $@"
+                UPDATE [dbo].[Products]
+                   SET [ProductDescription] = '{txtProductDescription.Text.Trim()}'
+                      ,[ProductCategory]    = '{txtProductCategory.Text.Trim()}'
+                      ,[Quantity]           = [Quantity] + {Convert.ToInt32(txtLogQuantity.Text.Trim())}
+                      ,[State]              = '{inventoryState}'
+                 WHERE ProductId            = {cmbProducts.SelectedValue}
+            ";
+
+            int rowsAffected2 = DataAccess.ExecuteNonQuery(sql);
+
+            if (rowsAffected2 == 1)
+            {
+                MessageBox.Show($"ProductId: {cmbProducts.SelectedValue} changes saved");
+            }
+            else
+            {
+                MessageBox.Show($"Update to ProductId: {cmbProducts.SelectedValue} was not updated.");
             }
         }
 

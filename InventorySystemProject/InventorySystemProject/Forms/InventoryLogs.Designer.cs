@@ -366,6 +366,7 @@
             // 
             // dtpLogDate
             // 
+            dtpLogDate.Enabled = false;
             dtpLogDate.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             dtpLogDate.Location = new Point(144, 134);
             dtpLogDate.Name = "dtpLogDate";
