@@ -1,6 +1,6 @@
 ﻿namespace InventorySystemProject
 {
-    partial class frmEmployees
+    partial class Employees
     {
         /// <summary>
         /// Required designer variable.

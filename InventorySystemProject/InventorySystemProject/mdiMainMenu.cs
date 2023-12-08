@@ -14,37 +14,34 @@ namespace InventorySystemProject
     {
         private int childFormNumber = 0;
 
+        public ToolStripStatusLabel StatusStripLabel
+        { get { return lblStatusMDI; } set { lblStatusMDI = value; } }
+
         public mdiMainMenu()
         {
             InitializeComponent();
         }
 
-        public ToolStripStatusLabel StatusStripLabel
-        {
-            get { return lblStatusMDI; }
-            set { lblStatusMDI = value; }
-        }
-
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = null;
-            ToolStripMenuItem m = (ToolStripMenuItem)sender;
+            object tag = ((ToolStripMenuItem)sender).Tag;
+            //ToolStripMenuItem m = (ToolStripMenuItem)sender;
 
-            switch (m.Tag)
+            //switch (m.Tag)
+            switch (tag.ToString())
             {
-                case "mnuMaintenanceEmployee":
+                case "Employees":
                     lblStatusMDI.Text = "Employee Form Loaded...";
-                    childForm = new frmEmployees();
+                    childForm = new Employees();
                     break;
-                case "mnuMaintenanceProduct":
+                case "Products":
                     lblStatusMDI.Text = "Product Form Loaded...";
-                    childForm = new frmProducts();
+                    childForm = new Products();
                     break;
-                case "mnuMaintenanceInventory":
+                case "Inventory":
                     lblStatusMDI.Text = "Inventory Form Loaded...";
-                    childForm = new frmInventoryLogs();
-                    break;
-                default:
+                    childForm = new InventoryLogs();
                     break;
             }
 
@@ -60,7 +57,7 @@ namespace InventorySystemProject
                 }
 
                 childForm.MdiParent = this;
-                //childForm.Text = "Window " + childFormNumber++;
+                childForm.WindowState = FormWindowState.Maximized;
                 childForm.Show();
             }
         }
@@ -123,5 +120,12 @@ namespace InventorySystemProject
         }
 
         #endregion
+
+        private void mdiMainMenu_Load(object sender, EventArgs e)
+        {
+            Form S = new frmLogin();
+            S.MdiParent = this;
+            S.Show();
+        }
     }
 }

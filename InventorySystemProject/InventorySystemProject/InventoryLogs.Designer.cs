@@ -1,6 +1,6 @@
 ﻿namespace InventorySystemProject
 {
-    partial class frmInventoryLogs
+    partial class InventoryLogs
     {
         /// <summary>
         /// Required designer variable.
@@ -64,6 +64,8 @@
             grpNotes = new GroupBox();
             txtLogNotes = new TextBox();
             errProvider = new ErrorProvider(components);
+            lblProductId = new Label();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)imgLogPhoto).BeginInit();
             grpEmployee.SuspendLayout();
             grpInventoryLog.SuspendLayout();
@@ -76,7 +78,7 @@
             // 
             lblProductName.AutoSize = true;
             lblProductName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProductName.Location = new Point(74, 41);
+            lblProductName.Location = new Point(72, 81);
             lblProductName.Margin = new Padding(4, 0, 4, 0);
             lblProductName.Name = "lblProductName";
             lblProductName.Size = new Size(64, 25);
@@ -117,7 +119,7 @@
             // 
             lblProductDescription.AutoSize = true;
             lblProductDescription.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProductDescription.Location = new Point(28, 94);
+            lblProductDescription.Location = new Point(26, 121);
             lblProductDescription.Margin = new Padding(4, 0, 4, 0);
             lblProductDescription.Name = "lblProductDescription";
             lblProductDescription.Size = new Size(110, 25);
@@ -128,7 +130,7 @@
             // 
             lblProductCategory.AutoSize = true;
             lblProductCategory.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProductCategory.Location = new Point(47, 145);
+            lblProductCategory.Location = new Point(45, 161);
             lblProductCategory.Margin = new Padding(4, 0, 4, 0);
             lblProductCategory.Name = "lblProductCategory";
             lblProductCategory.Size = new Size(91, 25);
@@ -149,7 +151,7 @@
             // txtProductName
             // 
             txtProductName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtProductName.Location = new Point(145, 37);
+            txtProductName.Location = new Point(144, 78);
             txtProductName.Margin = new Padding(4);
             txtProductName.Name = "txtProductName";
             txtProductName.Size = new Size(300, 32);
@@ -180,7 +182,7 @@
             // txtProductDescription
             // 
             txtProductDescription.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtProductDescription.Location = new Point(145, 90);
+            txtProductDescription.Location = new Point(144, 118);
             txtProductDescription.Margin = new Padding(4);
             txtProductDescription.Name = "txtProductDescription";
             txtProductDescription.Size = new Size(300, 32);
@@ -200,7 +202,7 @@
             // txtProductCategory
             // 
             txtProductCategory.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtProductCategory.Location = new Point(145, 141);
+            txtProductCategory.Location = new Point(144, 158);
             txtProductCategory.Margin = new Padding(4);
             txtProductCategory.Name = "txtProductCategory";
             txtProductCategory.Size = new Size(300, 32);
@@ -209,7 +211,7 @@
             // txtEmployeePosition
             // 
             txtEmployeePosition.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtEmployeePosition.Location = new Point(8, 141);
+            txtEmployeePosition.Location = new Point(8, 161);
             txtEmployeePosition.Margin = new Padding(4);
             txtEmployeePosition.Name = "txtEmployeePosition";
             txtEmployeePosition.Size = new Size(300, 32);
@@ -218,7 +220,7 @@
             // txtEmployeeName
             // 
             txtEmployeeName.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtEmployeeName.Location = new Point(8, 66);
+            txtEmployeeName.Location = new Point(8, 96);
             txtEmployeeName.Margin = new Padding(4);
             txtEmployeeName.Name = "txtEmployeeName";
             txtEmployeeName.Size = new Size(300, 32);
@@ -228,7 +230,7 @@
             // 
             lblEmployeePosition.AutoSize = true;
             lblEmployeePosition.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEmployeePosition.Location = new Point(11, 115);
+            lblEmployeePosition.Location = new Point(8, 132);
             lblEmployeePosition.Margin = new Padding(4, 0, 4, 0);
             lblEmployeePosition.Name = "lblEmployeePosition";
             lblEmployeePosition.Size = new Size(169, 25);
@@ -239,7 +241,7 @@
             // 
             lblProductStatus.AutoSize = true;
             lblProductStatus.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProductStatus.Location = new Point(11, 40);
+            lblProductStatus.Location = new Point(8, 67);
             lblProductStatus.Margin = new Padding(4, 0, 4, 0);
             lblProductStatus.Name = "lblProductStatus";
             lblProductStatus.Size = new Size(153, 25);
@@ -266,7 +268,7 @@
             // txtLogQuantity
             // 
             txtLogQuantity.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            txtLogQuantity.Location = new Point(145, 82);
+            txtLogQuantity.Location = new Point(145, 87);
             txtLogQuantity.Margin = new Padding(4);
             txtLogQuantity.Name = "txtLogQuantity";
             txtLogQuantity.Size = new Size(127, 32);
@@ -298,7 +300,7 @@
             // 
             lblQuantity.AutoSize = true;
             lblQuantity.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblQuantity.Location = new Point(50, 85);
+            lblQuantity.Location = new Point(50, 90);
             lblQuantity.Margin = new Padding(4, 0, 4, 0);
             lblQuantity.Name = "lblQuantity";
             lblQuantity.Size = new Size(87, 25);
@@ -391,7 +393,7 @@
             // 
             rdoRemove.AutoSize = true;
             rdoRemove.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            rdoRemove.Location = new Point(355, 83);
+            rdoRemove.Location = new Point(355, 88);
             rdoRemove.Name = "rdoRemove";
             rdoRemove.Size = new Size(99, 29);
             rdoRemove.TabIndex = 7;
@@ -403,7 +405,7 @@
             // 
             rdoAdd.AutoSize = true;
             rdoAdd.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            rdoAdd.Location = new Point(284, 83);
+            rdoAdd.Location = new Point(284, 88);
             rdoAdd.Name = "rdoAdd";
             rdoAdd.Size = new Size(65, 29);
             rdoAdd.TabIndex = 6;
@@ -413,6 +415,8 @@
             // 
             // grpProduct
             // 
+            grpProduct.Controls.Add(comboBox1);
+            grpProduct.Controls.Add(lblProductId);
             grpProduct.Controls.Add(txtProductCategory);
             grpProduct.Controls.Add(txtProductDescription);
             grpProduct.Controls.Add(txtProductName);
@@ -455,6 +459,26 @@
             // 
             errProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             errProvider.ContainerControl = this;
+            // 
+            // lblProductId
+            // 
+            lblProductId.AutoSize = true;
+            lblProductId.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProductId.Location = new Point(33, 42);
+            lblProductId.Margin = new Padding(4, 0, 4, 0);
+            lblProductId.Name = "lblProductId";
+            lblProductId.Size = new Size(104, 25);
+            lblProductId.TabIndex = 6;
+            lblProductId.Text = "Product ID";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(144, 37);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(300, 33);
+            comboBox1.TabIndex = 7;
             // 
             // frmInventoryLogs
             // 
@@ -526,5 +550,7 @@
         private DateTimePicker dtpLogExpiration;
         private ErrorProvider errProvider;
         private DateTimePicker dtpLogDate;
+        private Label lblProductId;
+        private ComboBox comboBox1;
     }
 }

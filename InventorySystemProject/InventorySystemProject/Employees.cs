@@ -11,9 +11,9 @@ using UT = InventorySystemProject.UIUtilities;
 
 namespace InventorySystemProject
 {
-    public partial class frmEmployees : Form
+    public partial class Employees : Form
     {
-        public frmEmployees()
+        public Employees()
         {
             InitializeComponent();
         }
