@@ -15,7 +15,7 @@ namespace InventorySystemProject.Forms
     public partial class frmDataGridViews : Form
     {
         private string[] tables = new string[]
-            { "Categories","Customers", "Products", "Region", "Shippers", "Suppliers", "NotATable" };
+            { "Employees","Products", "Inventory" };
         private static string connectionString = CM.ConnectionStrings["Northwind"].ConnectionString;
 
         private static string dbName = CM.ConnectionStrings["IMSDatabase"].Name.ToString();
