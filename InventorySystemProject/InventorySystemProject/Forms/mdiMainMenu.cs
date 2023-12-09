@@ -27,9 +27,6 @@ namespace InventorySystemProject
         {
             Form childForm = null;
             object tag = ((ToolStripMenuItem)sender).Tag;
-            //ToolStripMenuItem m = (ToolStripMenuItem)sender;
-
-            //switch (m.Tag)
             switch (tag.ToString())
             {
                 case "Employees":
@@ -44,13 +41,7 @@ namespace InventorySystemProject
                 case "About":
                     childForm = new About();
                     break;
-                case "mnuViewEmployees":
-                    childForm = new frmDataGridViews();
-                    break;
-                case "mnuViewProducts":
-                    childForm = new frmDataGridViews();
-                    break;
-                case "mnuViewInventoryLogs":
+                case "Browse":
                     childForm = new frmDataGridViews();
                     break;
             }
@@ -67,12 +58,6 @@ namespace InventorySystemProject
                 }
 
                 childForm.MdiParent = this;
-
-                /*if (childForm.Tag == "mnuViewEmployees")
-                {
-                    childForm.WindowState = FormWindowState.Maximized;
-                }*/
-
                 childForm.Show();
             }
         }
@@ -163,6 +148,12 @@ namespace InventorySystemProject
                 MessageBox.Show("ACCESS DENIED!");
                 this.Close();
             }
+        }
+
+        public void updateLabels(string txtStatus, string? txtStatus2)
+        {
+            lblRecordStatusMDI.Text = txtStatus;
+            lblStockStatusMDI.Text = txtStatus2;
         }
     }
 }

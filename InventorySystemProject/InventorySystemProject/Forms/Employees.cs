@@ -23,12 +23,13 @@ namespace InventorySystemProject
         int lastEmployeeId = 0;
         int? previousEmployeeId;
         int? nextEmployeeId;
-        string userAccess = GlobalData.userAccess;
+        int employeeCount = 0;
+        int selectedIndex = 1;
 
         private void frmEmployees_Load(object sender, EventArgs e)
         {
             LoadFirstEmployee();
-            
+
             switch (GlobalData.AccessLevel())
             {
                 case 5:
@@ -36,10 +37,16 @@ namespace InventorySystemProject
                     break;
                 case 4:
                     // Manager has complete access of THE LOGS ONLY
+                    txtUsername.Enabled = false;
+                    txtPassword.Enabled = false;
                     break;
                 case 3:
                     // Stock Clerk can only CREATE AND DELETE LOGS
-                    btnSave.Enabled = false;
+                    UT.DisableControls(this.grpName.Controls);
+                    UT.DisableControls(this.grpEmployeeDetails.Controls);
+                    UT.DisableControls(this.grpContactInfo.Controls);
+
+                    DDLControlState(false);
                     break;
                 case 0:
                     // THIS WILL TRIGGER GUEST MODE which cannot do anything but simply view the form in any case
@@ -184,6 +191,7 @@ namespace InventorySystemProject
 
                 firstEmployeeId = Convert.ToInt32(employeeId);
                 currentEmployeeId = firstEmployeeId;
+
                 LoadEmployeeDetails();
                 NextPreviousButtonManagement();
             }
@@ -214,7 +222,7 @@ namespace InventorySystemProject
                 q.NextEmployeeId,
                 (
                     SELECT TOP(1) EmployeeId as LastEmployeeId FROM Employees ORDER BY LastName Desc,FirstName Desc
-                ) as LastEmployeeId
+                ) as LastEmployeeId, (SELECT COUNT(EmployeeId) FROM Employees) as [EmployeeCount]
                 FROM
                 (
                     SELECT EmployeeId, LastName, FirstName,
@@ -249,6 +257,25 @@ namespace InventorySystemProject
                 nextEmployeeId = ds.Tables[1].Rows[0]["NextEmployeeId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["NextEmployeeId"]) : (int?)null;
                 lastEmployeeId = Convert.ToInt32(ds.Tables[1].Rows[0]["LastEmployeeId"]);
 
+                employeeCount = Convert.ToInt32(ds.Tables[1].Rows[0]["EmployeeCount"]);
+                GlobalData.lblRecordStatus = $"|  Employee {selectedIndex} of {employeeCount}  |";
+                updateStatusMDI(GlobalData.lblRecordStatus.ToString(), "");
+
+                if (currentEmployeeId != Convert.ToInt32(GlobalData.userId))
+                {
+                    txtPhone.Enabled = false;
+                    txtEmail.Enabled = false;
+                    txtUsername.Enabled = false;
+                    txtPassword.Enabled = false;
+                }
+
+                else
+                {
+                    txtPhone.Enabled = true;
+                    txtEmail.Enabled = true;
+                    txtUsername.Enabled = true;
+                    txtPassword.Enabled = true;
+                }
             }
             else
             {
@@ -384,15 +411,19 @@ namespace InventorySystemProject
             {
                 case "btnFirst":
                     currentEmployeeId = firstEmployeeId;
+                    selectedIndex = 1;
                     break;
                 case "btnLast":
                     currentEmployeeId = lastEmployeeId;
+                    selectedIndex = employeeCount;
                     break;
                 case "btnPrevious":
                     currentEmployeeId = previousEmployeeId.Value;
+                    selectedIndex -= 1;
                     break;
                 case "btnNext":
                     currentEmployeeId = nextEmployeeId.Value;
+                    selectedIndex += 1;
                     break;
             }
 
@@ -415,18 +446,17 @@ namespace InventorySystemProject
                 failedValidation = true;
             }
 
-            if (txt.Name == "txtOfficeNumber")
-            {
-                if (!Validator.IsNumeric(txt.Text))
-                {
-                    errMsg = $"{txtBoxName} required to be numeric";
-                    failedValidation = true;
-                }
-            }
-
             e.Cancel = failedValidation;
 
             errProvider.SetError(txt, errMsg);
+        }
+
+        private void updateStatusMDI(string statusText, string? statusText2)
+        {
+            if (this.MdiParent is mdiMainMenu mdiParentForm)
+            {
+                mdiParentForm.updateLabels(statusText, statusText2);
+            }
         }
     }
 }

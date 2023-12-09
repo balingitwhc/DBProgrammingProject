@@ -23,10 +23,49 @@ namespace InventorySystemProject
         int lastProductId = 0;
         int? previousProductId;
         int? nextProductId;
+        int productCount = 0;
+        int selectedIndex = 1;
 
         private void frmProducts_Load(object sender, EventArgs e)
         {
             LoadFirstProduct();
+
+            switch (GlobalData.AccessLevel())
+            {
+                case 5:
+                    // Admininstrator has FULL ACCESS
+                    break;
+                case 4:
+                    // Manager has complete access of THE LOGS ONLY
+                    txtProductStatus.Enabled = false;
+                    txtQuantity.Enabled = false;
+                    break;
+                case 3:
+                    // Stock Clerk can only CREATE AND DELETE LOGS
+                    UT.DisableControls(this.grpProduct.Controls);
+                    UT.DisableControls(this.grpProductDetails.Controls);
+                    UT.DisableControls(this.grpProductState.Controls);
+
+                    DDLControlState(false);
+                    break;
+                case 0:
+                    // THIS WILL TRIGGER GUEST MODE which cannot do anything but simply view the form in any case
+                    UT.ClearControls(this.grpProduct.Controls);
+                    UT.ClearControls(this.grpProductDetails.Controls);
+                    UT.ClearControls(this.grpProductState.Controls);
+
+                    UT.DisableControls(this.grpProduct.Controls);
+                    UT.DisableControls(this.grpProductDetails.Controls);
+                    UT.DisableControls(this.grpProductState.Controls);
+
+                    NavigationState(false);
+                    DDLControlState(false);
+                    break;
+                default:
+                    // Cashier and Deli Positions can only VIEW
+                    DDLControlState(false);
+                    break;
+            }
         }
 
         private void DDLControlState(bool state)
@@ -182,7 +221,7 @@ namespace InventorySystemProject
                 q.NextProductId,
                 (
                     SELECT TOP(1) ProductId as LastProductId FROM Products ORDER BY ProductName Desc
-                ) as LastProductId
+                ) as LastProductId, (SELECT COUNT(ProductId) FROM Products) as [ProductCount]
                 FROM
                 (
                     SELECT ProductId, ProductName,
@@ -217,6 +256,10 @@ namespace InventorySystemProject
                 nextProductId = ds.Tables[1].Rows[0]["NextProductId"] != DBNull.Value ? Convert.ToInt32(ds.Tables["Table1"].Rows[0]["NextProductId"]) : (int?)null;
                 lastProductId = Convert.ToInt32(ds.Tables[1].Rows[0]["LastProductId"]);
 
+                productCount = Convert.ToInt32(ds.Tables[1].Rows[0]["ProductCount"]);
+                GlobalData.lblRecordStatus = $"|  Product {selectedIndex} of {productCount}  |";
+                GlobalData.lblStockStatus = $" Stock State : {txtProductStatus.Text.Trim()}";
+                updateStatusMDI(GlobalData.lblRecordStatus.ToString(), GlobalData.lblStockStatus.ToString());
             }
             else
             {
@@ -352,15 +395,19 @@ namespace InventorySystemProject
             {
                 case "btnFirst":
                     currentProductId = firstProductId;
+                    selectedIndex = 1;
                     break;
                 case "btnLast":
                     currentProductId = lastProductId;
+                    selectedIndex = productCount;
                     break;
                 case "btnPrevious":
                     currentProductId = previousProductId.Value;
+                    selectedIndex -= 1;
                     break;
                 case "btnNext":
                     currentProductId = nextProductId.Value;
+                    selectedIndex += 1;
                     break;
             }
 
@@ -383,7 +430,25 @@ namespace InventorySystemProject
                 failedValidation = true;
             }
 
-            if (txt.Name == "txtOfficeNumber")
+            if (txt.Name == "txtQuantity")
+            {
+                if (!Validator.IsNumeric(txt.Text))
+                {
+                    errMsg = $"{txtBoxName} required to be numeric";
+                    failedValidation = true;
+                }
+            }
+
+            if (txt.Name == "txtUnitPrice")
+            {
+                if (!Validator.IsNumeric(txt.Text))
+                {
+                    errMsg = $"{txtBoxName} required to be numeric";
+                    failedValidation = true;
+                }
+            }
+
+            if (txt.Name == "txtMaxStockAmt")
             {
                 if (!Validator.IsNumeric(txt.Text))
                 {
@@ -395,6 +460,14 @@ namespace InventorySystemProject
             e.Cancel = failedValidation;
 
             errProvider.SetError(txt, errMsg);
+        }
+
+        private void updateStatusMDI(string statusText, string? statusText2)
+        {
+            if (this.MdiParent is mdiMainMenu mdiParentForm)
+            {
+                mdiParentForm.updateLabels(statusText, statusText2);
+            }
         }
     }
 }

@@ -14,6 +14,8 @@ namespace InventorySystemProject
         public static string lblRecordStatus { get; set; }
         public static string lblStockStatus { get; set; }
 
+        //snippet to update the MDI Labels from the child forms
+        //updateStatusMDI(GlobalData.lblRecordStatus.ToString(), GlobalData.lblStockStatus.ToString());
         public static int AccessLevel()
         {
             switch (userAccess)

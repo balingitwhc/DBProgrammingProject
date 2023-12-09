@@ -14,35 +14,43 @@ namespace InventorySystemProject.Forms
 {
     public partial class frmDataGridViews : Form
     {
-        private string[] tables = new string[]
-            { "Employees","Products", "Inventory" };
-        private static string connectionString = CM.ConnectionStrings["Northwind"].ConnectionString;
+        private static string connectionString = CM.ConnectionStrings["IMSDatabase"].ConnectionString;
 
         private static string dbName = CM.ConnectionStrings["IMSDatabase"].Name.ToString();
 
         public frmDataGridViews()
         {
             InitializeComponent();
+            Load += frmDataGridViews_Load;
         }
 
         private void frmDataGridViews_Load(object sender, EventArgs e)
         {
-            foreach (string table in tables)
-            {
-                comboBox1.Items.Add(table);
-            }
+            WindowState = FormWindowState.Maximized;
         }
 
-        private void cmbTables_SelectedIndexChanged(object sender, EventArgs e)
+        public void GridUpdate(object sender, EventArgs e)
         {
-            string selectedTable = comboBox1.SelectedItem.ToString();
+            string selectedTable;
+
+            ToolStripMenuItem m = ((ToolStripMenuItem)sender);
+            selectedTable = m.Tag.ToString();
+
             PopulateDataAdapter(selectedTable);
+
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.FillWeight = 1;
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            updateStatusMDI(GlobalData.lblRecordStatus.ToString(), "");
         }
 
         private void PopulateDataAdapter(string table)
         {
             string query = $"SELECT * FROM {table}";
 
+            string msg;
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -53,7 +61,8 @@ namespace InventorySystemProject.Forms
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         dataGridView1.DataSource = dt;
-                        //GlobalData.lblRecordStatus.ToString() = $"The {dbName} table {table} has {dt.Rows.Count} rows.";
+                        msg = $"The \"{dbName}\" table \"{table}\" has {dt.Rows.Count} records.";
+                        GlobalData.lblRecordStatus = msg;
                     }
                 }
             }
@@ -62,6 +71,14 @@ namespace InventorySystemProject.Forms
                 MessageBox.Show(ex.Message, "Data Adapter Error");
             }
 
+        }
+
+        private void updateStatusMDI(string statusText, string? statusText2)
+        {
+            if (this.MdiParent is mdiMainMenu mdiParentForm)
+            {
+                mdiParentForm.updateLabels(statusText, statusText2);
+            }
         }
     }
 }

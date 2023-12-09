@@ -29,44 +29,83 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            comboBox1 = new ComboBox();
+            menuStrip1 = new MenuStrip();
+            mnuGridEmployees = new ToolStripMenuItem();
+            productsToolStripMenuItem = new ToolStripMenuItem();
+            inventoryLogsToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 52);
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 24);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(776, 386);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.Size = new Size(800, 426);
+            dataGridView1.TabIndex = 1;
             // 
-            // comboBox1
+            // menuStrip1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(667, 12);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 1;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuGridEmployees, productsToolStripMenuItem, inventoryLogsToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // mnuGridEmployees
+            // 
+            mnuGridEmployees.Name = "mnuGridEmployees";
+            mnuGridEmployees.Size = new Size(76, 20);
+            mnuGridEmployees.Tag = "Employees";
+            mnuGridEmployees.Text = "&Employees";
+            mnuGridEmployees.Click += GridUpdate;
+            // 
+            // productsToolStripMenuItem
+            // 
+            productsToolStripMenuItem.AccessibleDescription = "mnuGridProducts";
+            productsToolStripMenuItem.Name = "productsToolStripMenuItem";
+            productsToolStripMenuItem.Size = new Size(66, 20);
+            productsToolStripMenuItem.Tag = "Products";
+            productsToolStripMenuItem.Text = "&Products";
+            productsToolStripMenuItem.Click += GridUpdate;
+            // 
+            // inventoryLogsToolStripMenuItem
+            // 
+            inventoryLogsToolStripMenuItem.AccessibleDescription = "mnuGridInventoryLogs";
+            inventoryLogsToolStripMenuItem.Name = "inventoryLogsToolStripMenuItem";
+            inventoryLogsToolStripMenuItem.Size = new Size(97, 20);
+            inventoryLogsToolStripMenuItem.Tag = "Inventory";
+            inventoryLogsToolStripMenuItem.Text = "&Inventory Logs";
+            inventoryLogsToolStripMenuItem.Click += GridUpdate;
             // 
             // frmDataGridViews
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "frmDataGridViews";
-            Text = "DataGridViews";
+            Text = "Browse Table";
             Load += frmDataGridViews_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dataGridView1;
-        private ComboBox comboBox1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem mnuGridEmployees;
+        private ToolStripMenuItem productsToolStripMenuItem;
+        private ToolStripMenuItem inventoryLogsToolStripMenuItem;
     }
 }

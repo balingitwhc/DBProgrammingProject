@@ -31,3 +31,5 @@ C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemPr
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.genruntimeconfig.cache
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\ref\InventorySystemProject.dll
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Forms.About.resources
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\System.Security.Cryptography.ProtectedData.dll

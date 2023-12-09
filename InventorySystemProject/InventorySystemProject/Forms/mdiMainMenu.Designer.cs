@@ -35,20 +35,14 @@
             employeesToolStripMenuItem = new ToolStripMenuItem();
             productsToolStripMenuItem = new ToolStripMenuItem();
             inventoryToolStripMenuItem = new ToolStripMenuItem();
-            viewMenu = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
-            logsToolStripMenuItem = new ToolStripMenuItem();
-            productsToolStripMenuItem1 = new ToolStripMenuItem();
-            logsToolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripSeparator2 = new ToolStripSeparator();
-            statusBarToolStripMenuItem = new ToolStripMenuItem();
+            mnuBrowse = new ToolStripMenuItem();
             windowsMenu = new ToolStripMenuItem();
-            newWindowToolStripMenuItem = new ToolStripMenuItem();
             cascadeToolStripMenuItem = new ToolStripMenuItem();
             tileVerticalToolStripMenuItem = new ToolStripMenuItem();
             tileHorizontalToolStripMenuItem = new ToolStripMenuItem();
             closeAllToolStripMenuItem = new ToolStripMenuItem();
             arrangeIconsToolStripMenuItem = new ToolStripMenuItem();
+            statusBarToolStripMenuItem = new ToolStripMenuItem();
             helpMenu = new ToolStripMenuItem();
             contentsToolStripMenuItem = new ToolStripMenuItem();
             indexToolStripMenuItem = new ToolStripMenuItem();
@@ -58,6 +52,7 @@
             statusStrip = new StatusStrip();
             lblAccessStatusMDI = new ToolStripStatusLabel();
             lblRecordStatusMDI = new ToolStripStatusLabel();
+            lblStockStatusMDI = new ToolStripStatusLabel();
             toolTip = new ToolTip(components);
             mnuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
@@ -65,7 +60,7 @@
             // 
             // mnuStrip
             // 
-            mnuStrip.Items.AddRange(new ToolStripItem[] { maintenanceToolStripMenuItem, viewMenu, windowsMenu, helpMenu });
+            mnuStrip.Items.AddRange(new ToolStripItem[] { maintenanceToolStripMenuItem, mnuBrowse, windowsMenu, helpMenu });
             mnuStrip.Location = new Point(0, 0);
             mnuStrip.MdiWindowListItem = windowsMenu;
             mnuStrip.Name = "mnuStrip";
@@ -85,7 +80,7 @@
             // employeesToolStripMenuItem
             // 
             employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            employeesToolStripMenuItem.Size = new Size(180, 22);
+            employeesToolStripMenuItem.Size = new Size(131, 22);
             employeesToolStripMenuItem.Tag = "Employees";
             employeesToolStripMenuItem.Text = "&Employees";
             employeesToolStripMenuItem.Click += ShowNewForm;
@@ -93,7 +88,7 @@
             // productsToolStripMenuItem
             // 
             productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            productsToolStripMenuItem.Size = new Size(180, 22);
+            productsToolStripMenuItem.Size = new Size(131, 22);
             productsToolStripMenuItem.Tag = "Products";
             productsToolStripMenuItem.Text = "&Products";
             productsToolStripMenuItem.Click += ShowNewForm;
@@ -101,48 +96,60 @@
             // inventoryToolStripMenuItem
             // 
             inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            inventoryToolStripMenuItem.Size = new Size(180, 22);
+            inventoryToolStripMenuItem.Size = new Size(131, 22);
             inventoryToolStripMenuItem.Tag = "Inventory";
             inventoryToolStripMenuItem.Text = "&Inventory";
             inventoryToolStripMenuItem.Click += ShowNewForm;
             // 
-            // viewMenu
+            // mnuBrowse
             // 
-            viewMenu.DropDownItems.AddRange(new ToolStripItem[] { toolStripSeparator1, logsToolStripMenuItem, productsToolStripMenuItem1, logsToolStripMenuItem1, toolStripSeparator2, statusBarToolStripMenuItem });
-            viewMenu.Name = "viewMenu";
-            viewMenu.Size = new Size(44, 20);
-            viewMenu.Text = "&View";
+            mnuBrowse.Name = "mnuBrowse";
+            mnuBrowse.Size = new Size(57, 20);
+            mnuBrowse.Tag = "Browse";
+            mnuBrowse.Text = "&Browse";
+            mnuBrowse.Click += ShowNewForm;
             // 
-            // toolStripSeparator1
+            // windowsMenu
             // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(149, 6);
+            windowsMenu.DropDownItems.AddRange(new ToolStripItem[] { cascadeToolStripMenuItem, tileVerticalToolStripMenuItem, tileHorizontalToolStripMenuItem, closeAllToolStripMenuItem, arrangeIconsToolStripMenuItem, statusBarToolStripMenuItem });
+            windowsMenu.Name = "windowsMenu";
+            windowsMenu.Size = new Size(68, 20);
+            windowsMenu.Text = "&Windows";
             // 
-            // logsToolStripMenuItem
+            // cascadeToolStripMenuItem
             // 
-            logsToolStripMenuItem.Name = "logsToolStripMenuItem";
-            logsToolStripMenuItem.Size = new Size(152, 22);
-            logsToolStripMenuItem.Tag = "mnuViewEmployees";
-            logsToolStripMenuItem.Text = "E&mployees";
+            cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
+            cascadeToolStripMenuItem.Size = new Size(180, 22);
+            cascadeToolStripMenuItem.Text = "&Cascade";
+            cascadeToolStripMenuItem.Click += CascadeToolStripMenuItem_Click;
             // 
-            // productsToolStripMenuItem1
+            // tileVerticalToolStripMenuItem
             // 
-            productsToolStripMenuItem1.Name = "productsToolStripMenuItem1";
-            productsToolStripMenuItem1.Size = new Size(152, 22);
-            productsToolStripMenuItem1.Tag = "mnuViewProducts";
-            productsToolStripMenuItem1.Text = "P&roducts";
+            tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
+            tileVerticalToolStripMenuItem.Size = new Size(180, 22);
+            tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
+            tileVerticalToolStripMenuItem.Click += TileVerticalToolStripMenuItem_Click;
             // 
-            // logsToolStripMenuItem1
+            // tileHorizontalToolStripMenuItem
             // 
-            logsToolStripMenuItem1.Name = "logsToolStripMenuItem1";
-            logsToolStripMenuItem1.Size = new Size(152, 22);
-            logsToolStripMenuItem1.Tag = "mnuViewInventoryLogs";
-            logsToolStripMenuItem1.Text = "I&nventory Logs";
+            tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
+            tileHorizontalToolStripMenuItem.Size = new Size(180, 22);
+            tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
+            tileHorizontalToolStripMenuItem.Click += TileHorizontalToolStripMenuItem_Click;
             // 
-            // toolStripSeparator2
+            // closeAllToolStripMenuItem
             // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(149, 6);
+            closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
+            closeAllToolStripMenuItem.Size = new Size(180, 22);
+            closeAllToolStripMenuItem.Text = "C&lose All";
+            closeAllToolStripMenuItem.Click += CloseAllToolStripMenuItem_Click;
+            // 
+            // arrangeIconsToolStripMenuItem
+            // 
+            arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
+            arrangeIconsToolStripMenuItem.Size = new Size(180, 22);
+            arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
+            arrangeIconsToolStripMenuItem.Click += ArrangeIconsToolStripMenuItem_Click;
             // 
             // statusBarToolStripMenuItem
             // 
@@ -150,58 +157,9 @@
             statusBarToolStripMenuItem.CheckOnClick = true;
             statusBarToolStripMenuItem.CheckState = CheckState.Checked;
             statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            statusBarToolStripMenuItem.Size = new Size(152, 22);
+            statusBarToolStripMenuItem.Size = new Size(180, 22);
             statusBarToolStripMenuItem.Text = "&Status Bar";
             statusBarToolStripMenuItem.Click += StatusBarToolStripMenuItem_Click;
-            // 
-            // windowsMenu
-            // 
-            windowsMenu.DropDownItems.AddRange(new ToolStripItem[] { newWindowToolStripMenuItem, cascadeToolStripMenuItem, tileVerticalToolStripMenuItem, tileHorizontalToolStripMenuItem, closeAllToolStripMenuItem, arrangeIconsToolStripMenuItem });
-            windowsMenu.Name = "windowsMenu";
-            windowsMenu.Size = new Size(68, 20);
-            windowsMenu.Text = "&Windows";
-            // 
-            // newWindowToolStripMenuItem
-            // 
-            newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            newWindowToolStripMenuItem.Size = new Size(150, 22);
-            newWindowToolStripMenuItem.Text = "&New Window";
-            newWindowToolStripMenuItem.Click += ShowNewForm;
-            // 
-            // cascadeToolStripMenuItem
-            // 
-            cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            cascadeToolStripMenuItem.Size = new Size(150, 22);
-            cascadeToolStripMenuItem.Text = "&Cascade";
-            cascadeToolStripMenuItem.Click += CascadeToolStripMenuItem_Click;
-            // 
-            // tileVerticalToolStripMenuItem
-            // 
-            tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            tileVerticalToolStripMenuItem.Size = new Size(150, 22);
-            tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
-            tileVerticalToolStripMenuItem.Click += TileVerticalToolStripMenuItem_Click;
-            // 
-            // tileHorizontalToolStripMenuItem
-            // 
-            tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            tileHorizontalToolStripMenuItem.Size = new Size(150, 22);
-            tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
-            tileHorizontalToolStripMenuItem.Click += TileHorizontalToolStripMenuItem_Click;
-            // 
-            // closeAllToolStripMenuItem
-            // 
-            closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            closeAllToolStripMenuItem.Size = new Size(150, 22);
-            closeAllToolStripMenuItem.Text = "C&lose All";
-            closeAllToolStripMenuItem.Click += CloseAllToolStripMenuItem_Click;
-            // 
-            // arrangeIconsToolStripMenuItem
-            // 
-            arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            arrangeIconsToolStripMenuItem.Size = new Size(150, 22);
-            arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
-            arrangeIconsToolStripMenuItem.Click += ArrangeIconsToolStripMenuItem_Click;
             // 
             // helpMenu
             // 
@@ -214,7 +172,7 @@
             // 
             contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
             contentsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
-            contentsToolStripMenuItem.Size = new Size(180, 22);
+            contentsToolStripMenuItem.Size = new Size(168, 22);
             contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
@@ -222,7 +180,7 @@
             indexToolStripMenuItem.Image = (Image)resources.GetObject("indexToolStripMenuItem.Image");
             indexToolStripMenuItem.ImageTransparentColor = Color.Black;
             indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            indexToolStripMenuItem.Size = new Size(180, 22);
+            indexToolStripMenuItem.Size = new Size(168, 22);
             indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
@@ -230,30 +188,30 @@
             searchToolStripMenuItem.Image = (Image)resources.GetObject("searchToolStripMenuItem.Image");
             searchToolStripMenuItem.ImageTransparentColor = Color.Black;
             searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            searchToolStripMenuItem.Size = new Size(180, 22);
+            searchToolStripMenuItem.Size = new Size(168, 22);
             searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator8
             // 
             toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(177, 6);
+            toolStripSeparator8.Size = new Size(165, 6);
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(180, 22);
+            aboutToolStripMenuItem.Size = new Size(168, 22);
             aboutToolStripMenuItem.Tag = "About";
             aboutToolStripMenuItem.Text = "&About";
             aboutToolStripMenuItem.Click += ShowNewForm;
             // 
             // statusStrip
             // 
-            statusStrip.Items.AddRange(new ToolStripItem[] { lblAccessStatusMDI, lblRecordStatusMDI });
+            statusStrip.Items.AddRange(new ToolStripItem[] { lblAccessStatusMDI, lblRecordStatusMDI, lblStockStatusMDI });
             statusStrip.Location = new Point(0, 659);
             statusStrip.Name = "statusStrip";
             statusStrip.Padding = new Padding(1, 0, 16, 0);
             statusStrip.Size = new Size(1264, 22);
-            statusStrip.TabIndex = 2;
+            statusStrip.TabIndex = 1;
             statusStrip.Text = "StatusStrip";
             // 
             // lblAccessStatusMDI
@@ -267,6 +225,12 @@
             lblRecordStatusMDI.Name = "lblRecordStatusMDI";
             lblRecordStatusMDI.Size = new Size(95, 17);
             lblRecordStatusMDI.Text = "<Record Status>";
+            // 
+            // lblStockStatusMDI
+            // 
+            lblStockStatusMDI.Name = "lblStockStatusMDI";
+            lblStockStatusMDI.Size = new Size(87, 17);
+            lblStockStatusMDI.Text = "<Stock Status>";
             // 
             // mdiMainMenu
             // 
@@ -302,10 +266,8 @@
         private ToolStripStatusLabel lblAccessStatusMDI;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem tileHorizontalToolStripMenuItem;
-        private ToolStripMenuItem viewMenu;
-        private ToolStripMenuItem statusBarToolStripMenuItem;
+        private ToolStripMenuItem mnuBrowse;
         private ToolStripMenuItem windowsMenu;
-        private ToolStripMenuItem newWindowToolStripMenuItem;
         private ToolStripMenuItem cascadeToolStripMenuItem;
         private ToolStripMenuItem tileVerticalToolStripMenuItem;
         private ToolStripMenuItem closeAllToolStripMenuItem;
@@ -319,14 +281,11 @@
         private ToolStripMenuItem employeesToolStripMenuItem;
         private ToolStripMenuItem productsToolStripMenuItem;
         private ToolStripMenuItem inventoryToolStripMenuItem;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripMenuItem logsToolStripMenuItem;
-        private ToolStripMenuItem productsToolStripMenuItem1;
-        private ToolStripMenuItem logsToolStripMenuItem1;
-        private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem splashToolStripMenuItem;
         private ToolStripMenuItem loginToolStripMenuItem;
         private ToolStripStatusLabel lblRecordStatusMDI;
+        private ToolStripStatusLabel lblStockStatusMDI;
+        private ToolStripMenuItem statusBarToolStripMenuItem;
     }
 }
 

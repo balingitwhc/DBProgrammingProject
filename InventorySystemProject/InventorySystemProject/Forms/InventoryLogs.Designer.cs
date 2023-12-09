@@ -371,7 +371,7 @@
             dtpLogDate.Location = new Point(144, 134);
             dtpLogDate.Name = "dtpLogDate";
             dtpLogDate.Size = new Size(300, 29);
-            dtpLogDate.TabIndex = 12;
+            dtpLogDate.TabIndex = 8;
             // 
             // dtpLogExpiration
             // 
@@ -379,7 +379,7 @@
             dtpLogExpiration.Location = new Point(144, 183);
             dtpLogExpiration.Name = "dtpLogExpiration";
             dtpLogExpiration.Size = new Size(300, 29);
-            dtpLogExpiration.TabIndex = 10;
+            dtpLogExpiration.TabIndex = 9;
             // 
             // rdoRemove
             // 
@@ -433,7 +433,7 @@
             cmbProducts.Location = new Point(144, 40);
             cmbProducts.Name = "cmbProducts";
             cmbProducts.Size = new Size(300, 33);
-            cmbProducts.TabIndex = 7;
+            cmbProducts.TabIndex = 3;
             cmbProducts.SelectedIndexChanged += cmbProducts_SelectedIndexChanged;
             // 
             // grpNotes

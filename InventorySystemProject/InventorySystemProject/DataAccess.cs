@@ -11,7 +11,7 @@ namespace InventorySystemProject
 {
     internal static class DataAccess
     {
-        private static string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+        private static string connectionString = ConfigurationManager.ConnectionStrings["IMSDatabase"].ConnectionString;
 
         /// <summary>
         /// Queries a SQL Server database with a provided SELECT statement.

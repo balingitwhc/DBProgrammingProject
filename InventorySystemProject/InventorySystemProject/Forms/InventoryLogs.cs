@@ -28,6 +28,7 @@ namespace InventorySystemProject
         int currentQuantityChange = 0;
         int updatedQuantityChange = 0;
         int productQuantity = 0;
+        int selectedIndex = 1;
 
 
         private void InventoryLogs_Load(object sender, EventArgs e)
@@ -257,7 +258,7 @@ namespace InventorySystemProject
                 SELECT
                     InventoryLogId, QuantityChange, InventoryLogDate, ExpirationDate, InventoryAction, Notes,
                     Inv.EmployeeId, CONCAT(Emp.FirstName, ' ',Emp.LastName) AS 'EmployeeName', Emp.Position,
-                    Inv.ProductId, Prod.ProductName, Prod.ProductDescription, Prod.ProductCategory, Prod.Quantity, Prod.MaxStock
+                    Inv.ProductId, Prod.ProductName, Prod.ProductDescription, Prod.ProductCategory, Prod.Quantity, Prod.State, Prod.MaxStock
                 FROM Inventory AS Inv
                 JOIN Employees AS Emp ON Inv.EmployeeID = Emp.EmployeeID
                 JOIN Products AS Prod ON Inv.ProductID = Prod.ProductID
@@ -272,7 +273,7 @@ namespace InventorySystemProject
                 q.NextInventoryLogId,
                 (
                 SELECT TOP(1) InventoryLogId as LastInventoryLogId FROM Inventory ORDER BY ExpirationDate Desc,InventoryLogDate Desc
-                ) as LastInventoryLogId, (SELECT COUNT(InventoryLogId) FROM Inventory) as 'LogCount'
+                ) as LastInventoryLogId, (SELECT COUNT(InventoryLogId) FROM Inventory) as [LogCount]
                 FROM
                 (
                 SELECT InventoryLogId, ExpirationDate, InventoryLogDate,
@@ -293,7 +294,7 @@ namespace InventorySystemProject
             if (dsInventory.Tables[0].Rows.Count == 1)
             {
                 DataRow selectedInventoryLog = dsInventory.Tables[0].Rows[0];
-
+                
                 cmbProducts.SelectedValue = selectedInventoryLog["ProductId"];
                 txtProductDescription.Text = selectedInventoryLog["ProductDescription"].ToString();
                 txtProductCategory.Text = selectedInventoryLog["ProductCategory"].ToString();
@@ -315,7 +316,11 @@ namespace InventorySystemProject
                 maxStock = Convert.ToInt32(selectedInventoryLog["MaxStock"].ToString());
                 currentQuantityChange = Convert.ToInt32(txtLogQuantity.Text.Trim());
                 productQuantity = Convert.ToInt32(selectedInventoryLog["Quantity"].ToString());
+
                 logCount = Convert.ToInt32(dsInventory.Tables[1].Rows[0]["LogCount"]);
+                GlobalData.lblRecordStatus = $"|  Log {selectedIndex} of {logCount}  |";
+                GlobalData.lblStockStatus = $" Stock State : {Convert.ToString(selectedInventoryLog["State"])}";
+                updateStatusMDI(GlobalData.lblRecordStatus.ToString(), GlobalData.lblStockStatus.ToString());
 
             }
             else
@@ -392,7 +397,7 @@ namespace InventorySystemProject
                     }
 
                     string inventoryState = "";
-                    double stockPercentage = (double)productQuantity/maxStock;
+                    double stockPercentage = (double)productQuantity / maxStock;
 
                     if (stockPercentage < 0.2) { inventoryState = "Low Stock"; }
                     else if (stockPercentage > 1.2) { inventoryState = "High Stock"; }
@@ -480,7 +485,7 @@ namespace InventorySystemProject
                     }
 
                     string inventoryState = "";
-                    double stockPercentage = (double)productQuantity/maxStock;
+                    double stockPercentage = (double)productQuantity / maxStock;
 
                     if (stockPercentage < 0.2) { inventoryState = "Low Stock"; }
                     else if (stockPercentage > 1.2) { inventoryState = "High Stock"; }
@@ -554,15 +559,19 @@ namespace InventorySystemProject
             {
                 case "btnFirst":
                     currentInventoryLogId = firstInventoryLogId;
+                    selectedIndex = 1;
                     break;
                 case "btnLast":
                     currentInventoryLogId = lastInventoryLogId;
+                    selectedIndex = logCount;
                     break;
                 case "btnPrevious":
                     currentInventoryLogId = previousInventoryLogId.Value;
+                    selectedIndex -= 1;
                     break;
                 case "btnNext":
                     currentInventoryLogId = nextInventoryLogId.Value;
+                    selectedIndex += 1;
                     break;
             }
 
@@ -585,7 +594,7 @@ namespace InventorySystemProject
                 failedValidation = true;
             }
 
-            if (txt.Name == "txtOfficeNumber")
+            if (txt.Name == "txtQuanityChange")
             {
                 if (!Validator.IsNumeric(txt.Text))
                 {
@@ -648,6 +657,14 @@ namespace InventorySystemProject
                     txtProductDescription.Text = string.Empty;
                     txtProductCategory.Text = string.Empty;
                 }
+            }
+        }
+
+        private void updateStatusMDI(string statusText, string? statusText2)
+        {
+            if (this.MdiParent is mdiMainMenu mdiParentForm)
+            {
+                mdiParentForm.updateLabels(statusText, statusText2);
             }
         }
     }

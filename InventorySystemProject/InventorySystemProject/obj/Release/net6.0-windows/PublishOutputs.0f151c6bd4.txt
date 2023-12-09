@@ -1,0 +1,14 @@
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\InventorySystemProject - IMSGrocery.exe
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\InventorySystemProject - IMSGrocery.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\InventorySystemProject - IMSGrocery.deps.json
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\InventorySystemProject - IMSGrocery.runtimeconfig.json
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\InventorySystemProject - IMSGrocery.dll.config
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\InventorySystemProject - IMSGrocery.pdb
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\System.Configuration.ConfigurationManager.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\System.Data.SqlClient.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\System.Security.Cryptography.ProtectedData.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\runtimes\win-arm64\native\sni.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\runtimes\win-x64\native\sni.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\runtimes\win-x86\native\sni.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Release\net6.0-windows\app.publish\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

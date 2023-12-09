@@ -39,40 +39,40 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(58, 69);
+            label1.Location = new Point(12, 76);
             label1.Name = "label1";
             label1.Size = new Size(120, 21);
-            label1.TabIndex = 0;
+            label1.TabIndex = 1;
             label1.Text = "[Product Name]";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(58, 117);
+            label2.Location = new Point(12, 124);
             label2.Name = "label2";
             label2.Size = new Size(133, 21);
-            label2.TabIndex = 1;
+            label2.TabIndex = 2;
             label2.Text = "[Company Name]";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(58, 168);
+            label3.Location = new Point(12, 175);
             label3.Name = "label3";
             label3.Size = new Size(130, 21);
-            label3.TabIndex = 2;
+            label3.TabIndex = 3;
             label3.Text = "[Product Version]";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(58, 213);
+            label4.Location = new Point(12, 220);
             label4.Name = "label4";
             label4.Size = new Size(127, 21);
-            label4.TabIndex = 3;
+            label4.TabIndex = 4;
             label4.Text = "[Executable Path]";
             // 
             // label0
@@ -82,7 +82,7 @@
             label0.Location = new Point(12, 9);
             label0.Name = "label0";
             label0.Size = new Size(319, 38);
-            label0.TabIndex = 4;
+            label0.TabIndex = 0;
             label0.Text = "Application Properties:";
             // 
             // About

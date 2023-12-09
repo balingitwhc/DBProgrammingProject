@@ -52,7 +52,7 @@
             lblProduct.Location = new Point(22, 419);
             lblProduct.Name = "lblProduct";
             lblProduct.Size = new Size(238, 32);
-            lblProduct.TabIndex = 0;
+            lblProduct.TabIndex = 1;
             lblProduct.Text = "[Application Name]";
             // 
             // lblVersion
@@ -64,7 +64,7 @@
             lblVersion.Location = new Point(22, 451);
             lblVersion.Name = "lblVersion";
             lblVersion.Size = new Size(211, 32);
-            lblVersion.TabIndex = 1;
+            lblVersion.TabIndex = 2;
             lblVersion.Text = "[Current Version]";
             // 
             // lblCompany
@@ -77,7 +77,7 @@
             lblCompany.Location = new Point(22, 23);
             lblCompany.Name = "lblCompany";
             lblCompany.Size = new Size(140, 32);
-            lblCompany.TabIndex = 2;
+            lblCompany.TabIndex = 0;
             lblCompany.Text = "[Company]";
             // 
             // prgSplash
