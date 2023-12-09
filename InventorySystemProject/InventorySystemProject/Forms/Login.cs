@@ -39,7 +39,7 @@ namespace InventorySystemProject
             if (dt.Rows.Count == 1)
             {
                 DataRow access = dt.Rows[0];
-                GlobalData.accessLevel = Convert.ToString(dt.Rows[0]["Position"]);
+                GlobalData.userAccess = Convert.ToString(dt.Rows[0]["Position"]);
                 GlobalData.userId = Convert.ToString(dt.Rows[0]["EmployeeId"]);
                 GlobalData.userFullName = Convert.ToString(dt.Rows[0]["FullName"]);
                 DialogResult = DialogResult.OK;

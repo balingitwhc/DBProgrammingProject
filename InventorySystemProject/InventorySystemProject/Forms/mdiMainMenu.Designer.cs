@@ -57,8 +57,8 @@
             aboutToolStripMenuItem = new ToolStripMenuItem();
             statusStrip = new StatusStrip();
             lblAccessStatusMDI = new ToolStripStatusLabel();
-            toolTip = new ToolTip(components);
             lblRecordStatusMDI = new ToolStripStatusLabel();
+            toolTip = new ToolTip(components);
             mnuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
             SuspendLayout();
@@ -270,9 +270,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.grocerySplash;
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(1264, 681);
             Controls.Add(statusStrip);
             Controls.Add(mnuStrip);
+            DoubleBuffered = true;
             IsMdiContainer = true;
             MainMenuStrip = mnuStrip;
             Margin = new Padding(4, 3, 4, 3);

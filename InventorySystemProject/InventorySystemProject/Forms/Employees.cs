@@ -23,11 +23,50 @@ namespace InventorySystemProject
         int lastEmployeeId = 0;
         int? previousEmployeeId;
         int? nextEmployeeId;
-        string userAccess = GlobalData.accessLevel;
+        string userAccess = GlobalData.userAccess;
 
         private void frmEmployees_Load(object sender, EventArgs e)
         {
             LoadFirstEmployee();
+            
+            switch (GlobalData.AccessLevel())
+            {
+                case 5:
+                    // Admininstrator has FULL ACCESS
+                    break;
+                case 4:
+                    // Manager has complete access of THE LOGS ONLY
+                    break;
+                case 3:
+                    // Stock Clerk can only CREATE AND DELETE LOGS
+                    btnSave.Enabled = false;
+                    break;
+                case 0:
+                    // THIS WILL TRIGGER GUEST MODE which cannot do anything but simply view the form in any case
+                    UT.ClearControls(this.grpName.Controls);
+                    UT.ClearControls(this.grpEmployeeDetails.Controls);
+                    UT.ClearControls(this.grpContactInfo.Controls);
+
+                    UT.DisableControls(this.grpName.Controls);
+                    UT.DisableControls(this.grpEmployeeDetails.Controls);
+                    UT.DisableControls(this.grpContactInfo.Controls);
+
+                    NavigationState(false);
+                    DDLControlState(false);
+                    break;
+                default:
+                    // Cashier and Deli Positions can only VIEW
+                    DDLControlState(false);
+                    break;
+            }
+        }
+
+        private void DDLControlState(bool state)
+        {
+            btnAdd.Enabled = state;
+            btnDelete.Enabled = state;
+            btnSave.Enabled = state;
+            btnCancel.Enabled = state;
         }
 
         /// <summary>

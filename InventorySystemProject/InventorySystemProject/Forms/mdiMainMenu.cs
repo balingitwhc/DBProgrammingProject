@@ -141,7 +141,7 @@ namespace InventorySystemProject
 
             DialogResult result = loginForm.ShowDialog();
 
-            string userAccess = GlobalData.accessLevel;
+            string userAccess = GlobalData.userAccess;
             lblAccessStatusMDI.Text = $"User Logged in as : {userAccess}";
 
             if (result == DialogResult.OK)

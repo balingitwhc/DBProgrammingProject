@@ -119,6 +119,7 @@
             txtPassword.Size = new Size(300, 32);
             txtPassword.TabIndex = 7;
             txtPassword.Tag = "Password";
+            txtPassword.UseSystemPasswordChar = true;
             txtPassword.Validating += txt_Validating;
             // 
             // btnLast
@@ -419,7 +420,7 @@
             errProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             errProvider.ContainerControl = this;
             // 
-            // frmEmployees
+            // Employees
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -435,7 +436,7 @@
             Controls.Add(grpEmployeeDetails);
             Controls.Add(grpContactInfo);
             Controls.Add(grpName);
-            Name = "frmEmployees";
+            Name = "Employees";
             Text = "Employees";
             Load += frmEmployees_Load;
             ((System.ComponentModel.ISupportInitialize)imgProfilePhoto).EndInit();

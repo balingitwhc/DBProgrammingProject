@@ -29,6 +29,13 @@ namespace InventorySystemProject
             LoadFirstProduct();
         }
 
+        private void DDLControlState(bool state)
+        {
+            btnAdd.Enabled = state;
+            btnDelete.Enabled = state;
+            btnSave.Enabled = state;
+            btnCancel.Enabled = state;
+        }
 
         /// <summary>
         /// Add event handler

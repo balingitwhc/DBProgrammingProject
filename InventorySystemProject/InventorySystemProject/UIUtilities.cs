@@ -53,5 +53,55 @@ namespace InventorySystemProject
                 }
             }
         }
+
+        public static void DisableControls(this Control.ControlCollection controls)
+        {
+            foreach (Control ctl in controls)
+            {
+                switch (ctl)
+                {
+                    case TextBox txt:
+                        txt.Enabled = false;
+                        break;
+                    case CheckBox chk:
+                        chk.Enabled = false;
+                        break;
+                    case RadioButton rdo:
+                        rdo.Enabled = false;
+                        break;
+                    case DateTimePicker dtp:
+                        dtp.Enabled = false;
+                        break;
+                    case GroupBox gB:
+                        DisableControls(gB.Controls);
+                        break;
+                }
+            }
+        }
+
+        public static void EnableControls(this Control.ControlCollection controls)
+        {
+            foreach (Control ctl in controls)
+            {
+                switch (ctl)
+                {
+                    case TextBox txt:
+                        txt.Enabled = true;
+                        break;
+                    case CheckBox chk:
+                        chk.Enabled = true;
+                        break;
+                    case RadioButton rdo:
+                        rdo.Enabled = true;
+                        break;
+                    case DateTimePicker dtp:
+                        dtp.Enabled = true;
+                        break;
+                    case GroupBox gB:
+                        EnableControls(gB.Controls);
+                        break;
+                }
+            }
+        }
     }
 }

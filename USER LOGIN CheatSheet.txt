@@ -1,0 +1,26 @@
+Administrator - ADD/REMOVE/EDIT/DELETE INVENTORY LOGS/PRODUCT/EMPLOYEE
+Username	: scarter
+Password 	: letmein
+
+
+Manager - ADD/REMOVE/EDIT/DELETE INVENTORY LOGS ONLY
+Username	: breynolds
+Password 	: qwerty
+
+
+Stock Clerk - ADD/REMOVE INVENTORY LOGS ONLY
+Username	: opatel
+Password 	: pass123
+
+
+Cashier - VIEW ONLY
+Username	: amitchell
+Password 	: securepass
+
+
+Deli - VIEW ONLY
+Username	: eanderson
+Password 	: password123
+
+
+***GUEST or new user without proper "Position/Role" will only be able to access the forms without being able to view data***
