@@ -85,7 +85,7 @@
             // employeesToolStripMenuItem
             // 
             employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            employeesToolStripMenuItem.Size = new Size(131, 22);
+            employeesToolStripMenuItem.Size = new Size(180, 22);
             employeesToolStripMenuItem.Tag = "Employees";
             employeesToolStripMenuItem.Text = "&Employees";
             employeesToolStripMenuItem.Click += ShowNewForm;
@@ -93,7 +93,7 @@
             // productsToolStripMenuItem
             // 
             productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            productsToolStripMenuItem.Size = new Size(131, 22);
+            productsToolStripMenuItem.Size = new Size(180, 22);
             productsToolStripMenuItem.Tag = "Products";
             productsToolStripMenuItem.Text = "&Products";
             productsToolStripMenuItem.Click += ShowNewForm;
@@ -101,7 +101,7 @@
             // inventoryToolStripMenuItem
             // 
             inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            inventoryToolStripMenuItem.Size = new Size(131, 22);
+            inventoryToolStripMenuItem.Size = new Size(180, 22);
             inventoryToolStripMenuItem.Tag = "Inventory";
             inventoryToolStripMenuItem.Text = "&Inventory";
             inventoryToolStripMenuItem.Click += ShowNewForm;
@@ -214,7 +214,7 @@
             // 
             contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
             contentsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
-            contentsToolStripMenuItem.Size = new Size(168, 22);
+            contentsToolStripMenuItem.Size = new Size(180, 22);
             contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
@@ -222,7 +222,7 @@
             indexToolStripMenuItem.Image = (Image)resources.GetObject("indexToolStripMenuItem.Image");
             indexToolStripMenuItem.ImageTransparentColor = Color.Black;
             indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            indexToolStripMenuItem.Size = new Size(168, 22);
+            indexToolStripMenuItem.Size = new Size(180, 22);
             indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
@@ -230,19 +230,21 @@
             searchToolStripMenuItem.Image = (Image)resources.GetObject("searchToolStripMenuItem.Image");
             searchToolStripMenuItem.ImageTransparentColor = Color.Black;
             searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            searchToolStripMenuItem.Size = new Size(168, 22);
+            searchToolStripMenuItem.Size = new Size(180, 22);
             searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator8
             // 
             toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(165, 6);
+            toolStripSeparator8.Size = new Size(177, 6);
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(168, 22);
-            aboutToolStripMenuItem.Text = "&About ... ...";
+            aboutToolStripMenuItem.Size = new Size(180, 22);
+            aboutToolStripMenuItem.Tag = "About";
+            aboutToolStripMenuItem.Text = "&About";
+            aboutToolStripMenuItem.Click += ShowNewForm;
             // 
             // statusStrip
             // 

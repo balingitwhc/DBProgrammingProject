@@ -41,6 +41,9 @@ namespace InventorySystemProject
                 case "Inventory":
                     childForm = new InventoryLogs();
                     break;
+                case "About":
+                    childForm = new About();
+                    break;
                 case "mnuViewEmployees":
                     childForm = new frmDataGridViews();
                     break;

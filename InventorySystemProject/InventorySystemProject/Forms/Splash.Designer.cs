@@ -51,9 +51,9 @@
             lblProduct.ForeColor = Color.Maroon;
             lblProduct.Location = new Point(22, 419);
             lblProduct.Name = "lblProduct";
-            lblProduct.Size = new Size(123, 32);
+            lblProduct.Size = new Size(238, 32);
             lblProduct.TabIndex = 0;
-            lblProduct.Text = "[Product]";
+            lblProduct.Text = "[Application Name]";
             // 
             // lblVersion
             // 
@@ -63,9 +63,9 @@
             lblVersion.ForeColor = Color.Maroon;
             lblVersion.Location = new Point(22, 451);
             lblVersion.Name = "lblVersion";
-            lblVersion.Size = new Size(117, 32);
+            lblVersion.Size = new Size(211, 32);
             lblVersion.TabIndex = 1;
-            lblVersion.Text = "[Version]";
+            lblVersion.Text = "[Current Version]";
             // 
             // lblCompany
             // 

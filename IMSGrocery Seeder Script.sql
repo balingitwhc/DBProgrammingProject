@@ -1,13 +1,3 @@
---DROP DATABASE IF EXISTS IMSDatabase;
-
---DROP TABLE IMSDatabase.dbo.Inventory
---DROP TABLE IMSDatabase.dbo.Products
---DROP TABLE IMSDatabase.dbo.Employees
-
---SELECT * FROM IMSDatabase.dbo.Employees
---SELECT * FROM IMSDatabase.dbo.Inventory
---SELECT * FROM IMSDatabase.dbo.Products
-
 ----------------------------------------------------------------------------------------------------
 ----- SCRIPT TO CREATE AND FILL THE IMSDatabase WITH REQUIRED TABLES AND SAMPLE DATA
 ----------------------------------------------------------------------------------------------------
@@ -64,11 +54,11 @@ BEGIN
 	INSERT INTO Products VALUES
 	('Apples', 'Fresh and crisp apples', 'Fruits', 100, 'Pound', 1.99, 'In Stock', 200),
 	('Milk', 'Whole milk, 1 gallon', 'Dairy', 50, 'Gallon', 2.49, 'In Stock', 100),
-	('Bread', NULL, 'Bakery', 75, 'Loaf', 2.99, 'Low Stock', 150),
+	('Bread', NULL, 'Bakery', 75, 'Loaf', 2.99, 'In Stock', 150),
 	('Eggs', 'Large brown eggs, dozen', 'Dairy', 40, 'Dozen', 3.99, 'In Stock', 80),
 	('Bananas', 'Ripe and yellow bananas', 'Fruits', 80, 'Pound', 1.29, 'In Stock', 150),
 	('Chicken Breast', 'Boneless, skinless, 1lb', 'Meat', 30, 'Pound', 4.99, 'In Stock', 60),
-	('Pasta', 'Whole wheat spaghetti, 1lb', 'Pasta', 25, 'Box', 1.79, 'Out of Stock', 50),
+	('Pasta', 'Whole wheat spaghetti, 1lb', 'Pasta', 25, 'Box', 1.79, 'In Stock', 50),
 	('Tomatoes', 'Fresh tomatoes, 1lb', 'Vegetables', 60, 'Pound', 2.49, 'In Stock', 100);
 END;
 
@@ -114,141 +104,16 @@ BEGIN
 END;
 GO
 
+----------------------------------------------------------------------------------------------------
+----- OTHER SCRIPTS
+----------------------------------------------------------------------------------------------------
 
+--SELECT * FROM IMSDatabase.dbo.Employees
+--SELECT * FROM IMSDatabase.dbo.Inventory
+--SELECT * FROM IMSDatabase.dbo.Products
 
+--DROP TABLE IMSDatabase.dbo.Inventory
+--DROP TABLE IMSDatabase.dbo.Products
+--DROP TABLE IMSDatabase.dbo.Employees
 
-
-
-
---SELECT TOP (1) EmployeeId FROM Employees ORDER BY LastName, FirstName
---
---SELECT * FROM IMSDatabase.dbo.Employees ORDER BY LastName, FirstName
---
---SELECT * FROM Employees WHERE EmployeeId = 4
---
---SELECT 
---(
---    SELECT TOP(1) EmployeeId as FirstEmployeeId FROM Employees ORDER BY LastName,FirstName
---) as FirstEmployeeId,
---q.PreviousEmployeeId,
---q.NextEmployeeId,
---(
---    SELECT TOP(1) EmployeeId as LastEmployeeId FROM Employees ORDER BY LastName Desc,FirstName Desc
---) as LastEmployeeId
---FROM
---(
---    SELECT EmployeeId, LastName, FirstName,
---    LEAD(EmployeeId) OVER(ORDER BY LastName,FirstName) AS NextEmployeeId,
---    LAG(EmployeeId) OVER(ORDER BY LastName,FirstName) AS PreviousEmployeeId,
---    ROW_NUMBER() OVER(ORDER BY LastName, FirstName) AS 'RowNumber'
---    FROM Employees
---) AS q
---WHERE q.EmployeeId = 4
---ORDER BY q.LastName,q.FirstName
---
---
----------------------------------------------------------------------------------------------------
---
---SELECT * FROM Products ORDER BY ProductName
---
---SELECT * FROM Products WHERE ProductId = 1
---
---SELECT 
---(
---    SELECT TOP(1) ProductId as FirstProductId FROM Products ORDER BY ProductName
---) as FirstProductId,
---q.PreviousProductId,
---q.NextProductId,
---(
---    SELECT TOP(1) ProductId as LastProductId FROM Products ORDER BY ProductName Desc
---) as LastProductId
---FROM
---(
---    SELECT ProductId, ProductName,
---    LEAD(ProductId) OVER(ORDER BY ProductName) AS NextProductId,
---    LAG(ProductId) OVER(ORDER BY ProductName) AS PreviousProductId,
---    ROW_NUMBER() OVER(ORDER BY ProductName) AS 'RowNumber'
---    FROM Products
---) AS q
---WHERE q.ProductId = 1
---ORDER BY q.ProductName
---
---
---
---
---
---
--------------------------------------------------------------------------
---
---
---
---SELECT * FROM Inventory ORDER BY ExpirationDate, InventoryLogDate
---
---
---SELECT
---	InventoryLogId,QuantityChange,InventoryLogDate,ExpirationDate,InventoryAction,Notes,
---	Inv.EmployeeId, CONCAT(Emp.FirstName, ' ',Emp.LastName) AS [EmployeeName],Emp.Position,
---	Inv.ProductId, Prod.ProductName,Prod.ProductDescription,Prod.ProductCategory
---FROM    Inventory AS Inv
---JOIN    Employees AS Emp ON Inv.EmployeeID = Emp.EmployeeID
---JOIN    Products AS Prod ON Inv.ProductID = Prod.ProductID
-----WHERE   InventoryLogID = 1
---ORDER BY ExpirationDate, InventoryLogDate
---
---
---SELECT 
---(
---    SELECT TOP(1) InventoryLogId as FirstInventoryLogId FROM Inventory ORDER BY ExpirationDate, InventoryLogDate
---) as FirstInventoryLogId,
---q.PreviousInventoryLogId,
---q.NextInventoryLogId,
---(
---    SELECT TOP(1) InventoryLogId as LastInventoryLogId FROM Inventory ORDER BY ExpirationDate Desc,InventoryLogDate Desc
---) as LastInventoryLogId, (SELECT COUNT(InventoryLogId) FROM Inventory) as LogCount
---FROM
---(
---    SELECT InventoryLogId, ExpirationDate, InventoryLogDate,
---    LEAD(InventoryLogId) OVER(ORDER BY ExpirationDate, InventoryLogDate) AS NextInventoryLogId,
---    LAG(InventoryLogId) OVER(ORDER BY ExpirationDate, InventoryLogDate) AS PreviousInventoryLogId,
---    ROW_NUMBER() OVER(ORDER BY ExpirationDate, InventoryLogDate) AS 'RowNumber'
---    FROM Inventory
---) AS q
---WHERE q.InventoryLogId = 1
---ORDER BY q.ExpirationDate,q.InventoryLogDate
---
---------------------------------------------------------------------------------------------------------
---
---
---SELECT * FROM Employees
---
---
---SELECT
---    CASE
---        WHEN EXISTS (
---            SELECT *
---            FROM Employees
---            WHERE Username = 'eanderson'
---              AND [Password] = HASHBYTES('SHA2_256', 'password123')
---        ) THEN 1  -- Password matches
---        ELSE 0  -- Password does not match
---    END AS PasswordMatch;
---
---
---
---SELECT CONCAT(FirstName, ' ',LastName) AS [EmployeeName] ,[EmployeeId], [Position]
---FROM Employees
---WHERE Username = 'eanderson' AND [Password] = HASHBYTES('SHA2_256', 'password123')
---
---
---SELECT EmployeeId, LastName + ', ' + FirstName as [WholeName], Position
---FROM Employees
---ORDER BY LastName, FirstName
---
---SELECT ProductId, ProductName, ProductDescription, ProductCategory, Quantity, State, MaxStock
---FROM Products
---ORDER BY [State] Desc
---
---
---SELECT ProductId, ProductName, ProductDescription, ProductCategory
---FROM Products
---WHERE ProductId = 7
+--DROP DATABASE IF EXISTS IMSDatabase;
