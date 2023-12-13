@@ -1,9 +1,3 @@
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject.exe
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject.dll.config
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject.deps.json
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject.runtimeconfig.json
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject.dll
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject.pdb
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
@@ -25,11 +19,17 @@ C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemPr
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.AssemblyInfo.cs
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.csproj.CoreCompileInputs.cache
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.csproj.CopyComplete
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.dll
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\refint\InventorySystemProject.dll
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.pdb
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.genruntimeconfig.cache
-C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\ref\InventorySystemProject.dll
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject.Forms.About.resources
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
 C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject - IMSGrocery.exe
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject - IMSGrocery.dll.config
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject - IMSGrocery.deps.json
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject - IMSGrocery.runtimeconfig.json
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject - IMSGrocery.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\bin\Debug\net6.0-windows\InventorySystemProject - IMSGrocery.pdb
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject - IMSGrocery.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\refint\InventorySystemProject - IMSGrocery.dll
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\InventorySystemProject - IMSGrocery.pdb
+C:\PortableGit\DBP\DBProgrammingProject\InventorySystemProject\InventorySystemProject\obj\Debug\net6.0-windows\ref\InventorySystemProject - IMSGrocery.dll

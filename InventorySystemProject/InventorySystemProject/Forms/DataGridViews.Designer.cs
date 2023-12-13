@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvOverview = new DataGridView();
             menuStrip1 = new MenuStrip();
             mnuGridEmployees = new ToolStripMenuItem();
             productsToolStripMenuItem = new ToolStripMenuItem();
             inventoryLogsToolStripMenuItem = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvOverview).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvOverview
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 24);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(800, 426);
-            dataGridView1.TabIndex = 1;
+            dgvOverview.AllowUserToAddRows = false;
+            dgvOverview.AllowUserToDeleteRows = false;
+            dgvOverview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOverview.Dock = DockStyle.Fill;
+            dgvOverview.Location = new Point(0, 24);
+            dgvOverview.Name = "dgvOverview";
+            dgvOverview.RowTemplate.Height = 25;
+            dgvOverview.Size = new Size(800, 426);
+            dgvOverview.TabIndex = 1;
             // 
             // menuStrip1
             // 
@@ -87,13 +89,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvOverview);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "frmDataGridViews";
             Text = "Browse Table";
             Load += frmDataGridViews_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvOverview).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -102,7 +104,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvOverview;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem mnuGridEmployees;
         private ToolStripMenuItem productsToolStripMenuItem;

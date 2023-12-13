@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "InventorySystemProject/1.0.0": {
+      "InventorySystemProject - IMSGrocery/1.0.0": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "8.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
-          "InventorySystemProject.dll": {}
+          "InventorySystemProject - IMSGrocery.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
@@ -112,7 +112,7 @@
     }
   },
   "libraries": {
-    "InventorySystemProject/1.0.0": {
+    "InventorySystemProject - IMSGrocery/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

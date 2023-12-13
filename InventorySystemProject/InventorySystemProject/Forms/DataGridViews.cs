@@ -22,6 +22,49 @@ namespace InventorySystemProject.Forms
         {
             InitializeComponent();
             Load += frmDataGridViews_Load;
+            switch (GlobalData.AccessLevel())
+            {
+                case 5:
+                    // Admininstrator has FULL ACCESS
+                    dgvOverview.AllowUserToAddRows = true;
+                    dgvOverview.AllowUserToDeleteRows = true;
+                    dgvOverview.AllowUserToResizeRows = true;
+                    dgvOverview.AllowUserToResizeColumns = true;
+                    dgvOverview.AllowUserToOrderColumns = true;
+                    break;
+                case 4:
+                    // Manager has complete access of THE LOGS ONLY
+                    dgvOverview.AllowUserToAddRows = false;
+                    dgvOverview.AllowUserToDeleteRows = false;
+                    dgvOverview.AllowUserToResizeRows = true;
+                    dgvOverview.AllowUserToResizeColumns = true;
+                    dgvOverview.AllowUserToOrderColumns = true;
+                    break;
+                case 3:
+                    // Stock Clerk can only CREATE AND DELETE LOGS
+                    dgvOverview.AllowUserToAddRows = false;
+                    dgvOverview.AllowUserToDeleteRows = false;
+                    dgvOverview.AllowUserToResizeRows = true;
+                    dgvOverview.AllowUserToResizeColumns = true;
+                    dgvOverview.AllowUserToOrderColumns = true;
+                    break;
+                case 0:
+                    // THIS WILL TRIGGER GUEST MODE which cannot do anything but simply view the form in any case
+                    dgvOverview.AllowUserToAddRows = false;
+                    dgvOverview.AllowUserToDeleteRows = false;
+                    dgvOverview.AllowUserToResizeRows = false;
+                    dgvOverview.AllowUserToResizeColumns = false;
+                    dgvOverview.AllowUserToOrderColumns = false;
+                    break;
+                default:
+                    // Cashier and Deli Positions can only VIEW
+                    dgvOverview.AllowUserToAddRows = false;
+                    dgvOverview.AllowUserToDeleteRows = false;
+                    dgvOverview.AllowUserToResizeRows = true;
+                    dgvOverview.AllowUserToResizeColumns = true;
+                    dgvOverview.AllowUserToOrderColumns = true;
+                    break;
+            }
         }
 
         private void frmDataGridViews_Load(object sender, EventArgs e)
@@ -38,7 +81,7 @@ namespace InventorySystemProject.Forms
 
             PopulateDataAdapter(selectedTable);
 
-            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            foreach (DataGridViewColumn column in dgvOverview.Columns)
             {
                 column.FillWeight = 1;
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -60,7 +103,7 @@ namespace InventorySystemProject.Forms
                     {
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
-                        dataGridView1.DataSource = dt;
+                        dgvOverview.DataSource = dt;
                         msg = $"The \"{dbName}\" table \"{table}\" has {dt.Rows.Count} records.";
                         GlobalData.lblRecordStatus = msg;
                     }
