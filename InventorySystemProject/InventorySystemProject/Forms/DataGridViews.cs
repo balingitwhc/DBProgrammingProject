@@ -39,6 +39,7 @@ namespace InventorySystemProject.Forms
                     dgvOverview.AllowUserToResizeRows = true;
                     dgvOverview.AllowUserToResizeColumns = true;
                     dgvOverview.AllowUserToOrderColumns = true;
+                    dgvOverview.ReadOnly = true;
                     break;
                 case 3:
                     // Stock Clerk can only CREATE AND DELETE LOGS
@@ -47,6 +48,7 @@ namespace InventorySystemProject.Forms
                     dgvOverview.AllowUserToResizeRows = true;
                     dgvOverview.AllowUserToResizeColumns = true;
                     dgvOverview.AllowUserToOrderColumns = true;
+                    dgvOverview.ReadOnly = true;
                     break;
                 case 0:
                     // THIS WILL TRIGGER GUEST MODE which cannot do anything but simply view the form in any case
@@ -55,6 +57,7 @@ namespace InventorySystemProject.Forms
                     dgvOverview.AllowUserToResizeRows = false;
                     dgvOverview.AllowUserToResizeColumns = false;
                     dgvOverview.AllowUserToOrderColumns = false;
+                    dgvOverview.ReadOnly = true;
                     break;
                 default:
                     // Cashier and Deli Positions can only VIEW
@@ -63,6 +66,7 @@ namespace InventorySystemProject.Forms
                     dgvOverview.AllowUserToResizeRows = true;
                     dgvOverview.AllowUserToResizeColumns = true;
                     dgvOverview.AllowUserToOrderColumns = true;
+                    dgvOverview.ReadOnly = true;
                     break;
             }
         }
